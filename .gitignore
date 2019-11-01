@@ -1,2 +1,8 @@
 *.csv
 *.DS_Store
+node_modules
+*.csv
+*.xlsx
+package.json
+package-lock.json
+.gitattributes
