@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
-    <body>
-        <p>Hello!</p>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * { font-family: "Helvetica Neue";
+      }
+      svg {
+        background: #efefef;
+      }
+
+      .county {
+        fill:#e3e3e3;
+        stroke: #333;
+        stroke-width: 0.5;
+      }
+
+      .selected {
+        fill: rgb(0, 238, 255);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+    <script src="ny.js"></script>
+  </body>
 </html>
