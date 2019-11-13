@@ -12,7 +12,7 @@
 
 d3.queue()
     .defer(d3.json, "NewYork.json")
-    .defer(d3.csv, "1_2013-01-01.csv")
+    // .defer(d3.csv, "1_2013-01-01.csv")
     .await(ready)
 
 var projection = d3.geo.albers()
@@ -25,11 +25,17 @@ var path = d3.geoPath()
 
 //callback function    
 function ready (error, data) {
-    console.log(data)
+    console.log('This is data', data)
 
    var county = topojson.feature(data, data.objects.tl_2018_36_cousub).features
 
-   console.log(county)
+   console.log('This is county', county)
+   Object.keys(county).forEach(function (item) {
+            // console.log(item); // key
+            // console.log(county[item]); // value
+            console.log(county[item].properties.NAME);
+        }
+   );
 
    svg.selectAll(".county")
       .data(county)
