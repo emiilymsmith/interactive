@@ -23,13 +23,19 @@ var projection = d3.geo.albers()
 var path = d3.geoPath()
     .projection(projection)
 
+var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+    .style("visibility", "visible")
+    .text("a simple tooltip");
+    
 //callback function    
 function ready (error, data) {
     console.log(data)
 
    var county = topojson.feature(data, data.objects.tl_2018_36_cousub).features
 
-   console.log(county)
 
    svg.selectAll(".county")
       .data(county)
@@ -38,9 +44,14 @@ function ready (error, data) {
       .attr("d", path)
       .on('mouseover', function(d) {
           d3.select(this).classed("selected", true)
+          tooltip.style("visibility", "visible");
+          console.log(county.NAME)
+          //tooltip.text(this.properties.NAME)
       })
+      .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
       .on('mouseout', function(d) {
         d3.select(this).classed("selected", false)
+        tooltip.style("visibility", "hidden");
     })
 
     /* csv */

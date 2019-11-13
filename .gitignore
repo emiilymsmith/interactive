@@ -6,3 +6,4 @@ node_modules
 package.json
 package-lock.json
 .gitattributes
+EMS_by_month
