@@ -45,10 +45,10 @@ function ready (error, data) {
 //    );
 // uncomment upper block out
 
-   Object.keys(county).forEach(function (item) {
-        console.log('to bind', item, '+', county[item].properties.NAME);
-        }
-    );
+//    Object.keys(county).forEach(function (item) {
+//         console.log('to bind', item, '+', county[item].properties.NAME);
+//         }
+//     );
 
    svg.selectAll(".county")
       .data(county)
@@ -58,8 +58,14 @@ function ready (error, data) {
       .on('mouseover', function(d) {
           d3.select(this).classed("selected", true)
           tooltip.style("visibility", "visible");
-          console.log(county.NAME)
-          //tooltip.text(this.properties.NAME)
+
+          let name = Object.keys(d).forEach(function (item) {
+            // console.log(item); // = type properties geometry
+            console.log(d[item].NAME); // sort of works, includes geometry and type though
+            // d[item].NAME //in theory this should appear in the tooltip, im not sure why it's not.
+            }
+          );
+          tooltip.text(name);
       })
       .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
       .on('mouseout', function(d) {
