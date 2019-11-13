@@ -27,7 +27,7 @@ var tooltip = d3.select("body")
 	.append("div")
 	.style("position", "absolute")
 	.style("z-index", "10")
-    .style("visibility", "visible")
+    .style("visibility", "hidden")
     .text("a simple tooltip");
     
 //callback function    
@@ -58,8 +58,8 @@ function ready (error, data) {
       .on('mouseover', function(d) {
           d3.select(this).classed("selected", true)
           tooltip.style("visibility", "visible");
-          console.log(county.NAME)
-          //tooltip.text(this.properties.NAME)
+          console.log(d.properties.NAME)
+          tooltip.text(d.properties.NAME)
       })
       .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
       .on('mouseout', function(d) {
