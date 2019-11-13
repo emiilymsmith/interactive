@@ -12,7 +12,7 @@
 
 d3.queue()
     .defer(d3.json, "NewYork.json")
-    .defer(d3.csv, "1_2013-01-01.csv")
+    .defer(d3.csv, "/EMS_by_month/1_2013-01-01.csv")
     .await(ready)
 
 var projection = d3.geo.albers()
