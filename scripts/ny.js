@@ -50,21 +50,25 @@ function ready (error, data) {
         }
     );
 
-   svg.selectAll(".county")
-      .data(county)
-      .enter().append("path")
-      .attr("class", "county")
-      .attr("d", path)
-      .on('mouseover', function(d) {
+    svg.selectAll(".county")
+    .data(county)
+    .enter().append("path")
+    .attr("class", "county")
+    .attr("d", path)
+    .on('mouseover', function(d) {
+        tooltip.style("visibility", "visible");
+        console.log(d.properties.NAME)
+        tooltip.text(d.properties.NAME)
+    })
+    .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+    .on("click",function(d){
+      if(d3.select(this).classed("selected"))
+          d3.select(this).classed("selected", false)
+      else
           d3.select(this).classed("selected", true)
-          tooltip.style("visibility", "visible");
-          console.log(d.properties.NAME)
-          tooltip.text(d.properties.NAME)
-      })
-      .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-      .on('mouseout', function(d) {
-        d3.select(this).classed("selected", false)
-        tooltip.style("visibility", "hidden");
+    })
+    .on('mouseout', function(d) {
+      tooltip.style("visibility", "hidden");
     })
 
     /* csv */

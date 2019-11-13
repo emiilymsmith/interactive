@@ -56,7 +56,7 @@ function ready (error, data) {
       })
       .on('mouseout', function(d) {
         tooltip.style("visibility", "hidden");
-    })
+      })
 
     /* csv */
     
