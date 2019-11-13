@@ -37,12 +37,18 @@ function ready (error, data) {
    var county = topojson.feature(data, data.objects.tl_2018_36_cousub).features
 
    console.log('This is county', county)
+//    Object.keys(county).forEach(function (item) {
+//             // console.log(item); // key, this is the number its associated to.
+//             // console.log(county[item]); // value
+//             console.log(county[item].properties.NAME);
+//         }
+//    );
+// uncomment upper block out
+
    Object.keys(county).forEach(function (item) {
-            // console.log(item); // key
-            // console.log(county[item]); // value
-            console.log(county[item].properties.NAME);
+        console.log('to bind', item, '+', county[item].properties.NAME);
         }
-   );
+    );
 
    svg.selectAll(".county")
       .data(county)
