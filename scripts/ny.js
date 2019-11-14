@@ -69,8 +69,14 @@ function updateSelected(that,d,datum){
     console.log(datum[0].borough);
     console.log(d.properties.NAME);
     count = 0;
+    var checkName = (d.properties.NAME).toUpperCase();
+    console.log(checkName);
     datum.forEach(report => {
-        console.log("loop: ",report.borough, " check: ",d.properties.NAME)
+        //console.log("loop: ",report.borough, " check: ",checkName)
+        if ((report.borough) == checkName){
+            ++count;
+            //TODO: use this to connect data to map/ maybe generate a chart with data? I dunno
+        }
         
     });
     console.log(count);
