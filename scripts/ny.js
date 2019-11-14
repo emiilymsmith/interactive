@@ -16,9 +16,9 @@ d3.queue()
     .await(ready)
 
 var projection = d3.geo.albers()
-    .center([21.5, 43])
+    .center([22, 40.55])
     .translate([ width/2 , height /2])
-    .scale(3750) 
+    .scale(16000) 
 
 var path = d3.geoPath()
     .projection(projection)
