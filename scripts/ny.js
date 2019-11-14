@@ -64,22 +64,35 @@ var tooltip = d3.select("body")
 	.style("z-index", "10")
     .style("visibility", "hidden")
     .text("a simple tooltip");
-    
+
+var selectedList = [];
+var selectedCount = 0;
+
 function updateSelected(that,d,datum){
-    console.log(datum[0].borough);
-    console.log(d.properties.NAME);
+    if(d3.select(that).classed("selected")){
+        d3.select(that).classed("selected", false)
+        selectedList = selectedList.filter(function(value, index, arr){return value != d;});
+        --selectedCount;
+    }
+    else{
+        d3.select(that).classed("selected", true)
+        selectedList[selectedCount] = d;
+        ++selectedCount;
+    }
     count = 0;
-    var checkName = (d.properties.NAME).toUpperCase();
-    console.log(checkName);
-    datum.forEach(report => {
-        //console.log("loop: ",report.borough, " check: ",checkName)
-        if ((report.borough) == checkName){
-            ++count;
-            //TODO: use this to connect data to map/ maybe generate a chart with data? I dunno
-        }
+
+    selectedList.forEach(selected => {  
+        var checkName = (selected.properties.NAME).toUpperCase();
+        datum.forEach(report => {
+            //console.log("loop: ",report.borough, " check: ",checkName)
+            if ((report.borough) == checkName || (report.borough) == "RICHMOND / " + checkName){
+                ++count;
+                //TODO: use this to connect data to map/ maybe generate a chart with data? I dunno
+            }
+        })
         
     });
-    console.log(count);
+    console.log("number of incidents reported in selected area(s): ",count);
 }
 //callback function    
 function ready (error, data, datum) {
@@ -113,10 +126,6 @@ function ready (error, data, datum) {
     })
     .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
     .on("click",function(d){
-        if(d3.select(this).classed("selected"))
-            d3.select(this).classed("selected", false)
-        else
-            d3.select(this).classed("selected", true)
         updateSelected(this,d,datum);
     })
     .on('mouseout', function(d) {
