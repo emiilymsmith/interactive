@@ -10,9 +10,12 @@
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.queue()
-    .defer(d3.json, "NewYork.json")
-    .defer(d3.csv, "/EMS_by_month/1_2013-01-01.csv",function(d) {
+var datum;
+function updateDatum(error,data){
+    datum = data;
+}
+function queueMonth(month){
+    d3.queue().defer(d3.csv, "/EMS_by_month/" + month,function(d) {
         return {
           id : d.CAD_INCIDENT_ID,
           incidentDT : d.INCIDENT_DATETIME,
@@ -48,6 +51,11 @@ d3.queue()
         };
       }
     )
+    .await(updateDatum)
+}
+queueMonth("1_2013-01-01.csv");
+d3.queue()
+    .defer(d3.json, "NewYork.json")
     .await(ready)
 
 var projection = d3.geo.albers()
@@ -68,17 +76,7 @@ var tooltip = d3.select("body")
 var selectedList = [];
 var selectedCount = 0;
 
-function updateSelected(that,d,datum){
-    if(d3.select(that).classed("selected")){
-        d3.select(that).classed("selected", false)
-        selectedList = selectedList.filter(function(value, index, arr){return value != d;});
-        --selectedCount;
-    }
-    else{
-        d3.select(that).classed("selected", true)
-        selectedList[selectedCount] = d;
-        ++selectedCount;
-    }
+function updateData(){
     count = 0;
 
     selectedList.forEach(selected => {  
@@ -93,6 +91,19 @@ function updateSelected(that,d,datum){
         
     });
     console.log("number of incidents reported in selected area(s): ",count);
+}
+function updateSelected(that,d){
+    if(d3.select(that).classed("selected")){
+        d3.select(that).classed("selected", false)
+        selectedList = selectedList.filter(function(value, index, arr){return value != d;});
+        --selectedCount;
+    }
+    else{
+        d3.select(that).classed("selected", true)
+        selectedList[selectedCount] = d;
+        ++selectedCount;
+    }
+    updateData();
 }
 //callback function    
 function ready (error, data, datum) {
