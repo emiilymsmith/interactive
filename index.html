@@ -28,6 +28,27 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
 
-    <script src="/scripts/ny.js"></script>
+    
+    <form id="myForm">
+      <label>Select month of data</label>
+      <select id="selectNumber">
+      </select>
+    </form>
+    <script>
+      var select = document.getElementById("selectNumber"); 
+      var options = ["1_2013-01-01.csv","2_2013-02-01.csv","3_2013-03-01.csv","4_2013-04-01.csv","5_2013-05-01.csv","6_2013-06-01.csv","7_2013-07-01.csv","8_2013-08-01.csv","9_2013-09-01.csv","10_2013-10-01.csv","11_2013-11-01.csv","12_2013-12-01.csv","13_2014-01-01.csv","14_2014-02-01.csv","15_2014-03-01.csv","16_2014-04-01.csv","17_2014-05-01.csv","18_2014-06-01.csv","19_2014-07-01.csv","20_2014-08-01.csv","21_2014-09-01.csv","22_2014-10-01.csv","23_2014-11-01.csv","24_2014-12-01.csv","25_2015-01-01.csv","26_2015-02-01.csv","27_2015-03-01.csv","28_2015-04-01.csv","29_2015-05-01.csv","30_2015-06-01.csv","31_2015-07-01.csv","32_2015-08-01.csv","33_2015-09-01.csv","34_2015-10-01.csv","35_2015-11-01.csv","36_2015-12-01.csv","37_2016-01-01.csv","38_2016-02-01.csv","39_2016-03-01.csv","40_2016-04-01.csv","41_2016-05-01.csv","42_2016-06-01.csv","43_2016-07-01.csv","44_2016-08-01.csv","45_2016-09-01.csv","46_2016-10-01.csv","47_2016-11-01.csv","48_2016-12-01.csv","49_2017-01-01.csv","50_2017-02-01.csv","51_2017-03-01.csv","52_2017-04-01.csv","53_2017-05-01.csv","54_2017-06-01.csv","55_2017-07-01.csv","56_2017-08-01.csv","57_2017-09-01.csv","58_2017-10-01.csv","59_2017-11-01.csv","60_2017-12-01.csv","61_2018-01-01.csv","62_2018-02-01.csv","63_2018-03-01.csv","64_2018-04-01.csv","65_2018-05-01.csv","66_2018-06-01.csv","67_2018-07-01.csv","68_2018-08-01.csv","69_2018-09-01.csv","70_2018-10-01.csv","71_2018-11-01.csv","72_2018-12-01.csv"];
+
+      for(var i = 0; i < options.length; i++) {
+          var opt = options[i];
+          var el = document.createElement("option");
+          var string = opt.split("_")[1];
+          string = string.split("-")[0] + "-" + string.split("-")[1];
+          el.textContent = string;
+          el.value = opt;
+          select.appendChild(el);
+          
+      }
+      </script>  
+      <script src="/scripts/ny.js"></script> 
   </body>
 </html>
