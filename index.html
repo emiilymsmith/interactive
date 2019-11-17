@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>New York</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       * { font-family: "Helvetica Neue", "Times New Roman";
       }
@@ -30,24 +31,35 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="d3.legend.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
-
+    
+    <title>New York</title>
   </head>
 
   <body>
     <div class="container">
-    <!-- Title -->
+    
+      <!-- Title -->
       <h1 class="title has-text-centered">New York</h1>
       <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
-    <div id="map"></div>
+      
+      <!-- Left Column -->
 
-    <form id="myForm">
-      <label>Select first month of data</label>
-      <select id="selectNumber"></select>
-      <br>
-      <label>Select last month of data</label>
-      <select id="selectNumber2"></select>
-      <br> <label>warning files are large, can't guarantee performance</label>
-    </form>
+      <!-- Map -->
+      <div id="map"></div>
+
+      <form id="myForm">
+        <label>Select first month of data</label>
+        <select id="selectNumber"></select>
+        <br>
+        <label>Select last month of data</label>
+        <select id="selectNumber2"></select>
+        <br> <label>warning files are large, can't guarantee performance</label>
+      </form>
+
+      <!-- Right Column -->
+      
+    </div>
+
     <script>
       var select = document.getElementById("selectNumber"); 
       var select2 = document.getElementById("selectNumber2"); 
