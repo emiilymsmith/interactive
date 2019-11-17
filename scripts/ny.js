@@ -1,7 +1,7 @@
 (function() {
   var margin = {top: 50, left: 50, right: 50, bottom: 50},
     height = 400 - margin.top - margin.bottom,
-    width = 800 - margin.left - margin.right;
+    width = 550 - margin.left - margin.right;
 
   var dropDown1 = d3.select(selectNumber).on('change',function(){updateMonth();});
   var dropDown2 = d3.select(selectNumber2).on('change',function(){updateMonth2();});

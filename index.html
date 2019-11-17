@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-      * { font-family: "Helvetica Neue", "Times New Roman";
-      }
       svg {
         background: #efefef;
       }
@@ -21,8 +19,15 @@
         fill: rgb(0, 238, 255);
       }
 
-      div.container {
+      #title {
         text-align: center;
+      }
+
+      #selectPanel {
+        background: #efefef;
+      }
+      #zoomedOut {
+        margin-top: 20px;
       }
     </style>
 
@@ -39,26 +44,34 @@
     <div class="container">
     
       <!-- Title -->
-      <h1 class="title has-text-centered">New York</h1>
-      <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+      <div id="title">
+        <h1 class="title has-text-centered">New York</h1>
+        <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+      </div>
       
-      <!-- Left Column -->
+      <div class="row">
+        <!-- Select Panel / Left Column -->
+        <div class="col" id="selectPanel">
+          <form id="myForm">
+            <label>Select first month of data</label>
+            <select id="selectNumber"></select>
+            <br>
+            <label>Select last month of data</label>
+            <select id="selectNumber2"></select>
+            <br> <label>warning files are large, can't guarantee performance</label>
+          </form>
+        </div>
 
-      <!-- Map -->
-      <div id="map"></div>
+        <!-- Map -->
+        <div class="col-6" id="map"></div>
 
-      <form id="myForm">
-        <label>Select first month of data</label>
-        <select id="selectNumber"></select>
-        <br>
-        <label>Select last month of data</label>
-        <select id="selectNumber2"></select>
-        <br> <label>warning files are large, can't guarantee performance</label>
-      </form>
-
-      <!-- Right Column -->
-      
-    </div>
+        <!-- Legend Panel / Right Column -->
+        <div class="col" id="legendPanel"> <!--need to figure out how to move these below on smaller window size -->
+          <svg id="legend" height=190 width=200></svg>
+          <svg id="zoomedOut" height=190 width=200></svg>
+        </div>
+      </div><!-- end row -->
+    </div> <!-- end container -->
 
     <script>
       var select = document.getElementById("selectNumber"); 
