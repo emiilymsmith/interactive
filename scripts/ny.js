@@ -148,15 +148,18 @@
         })
       })
     });
-    console.log("number of incidents reported in selected area(s): ",count);
+    // console.log("number of incidents reported in selected area(s): ",count);
+    return count;
   }
 
-  function legend() {
-    legend = svg.append("g")
-      .attr("class","legend")
-      .attr("transform","translate(50,30)")
-      .style("font-size","12px")
-      .call(d3.legend);
+  // Legend -----------------------------
+  var legendSvg = d3.select("#legend");
+
+  function updateLegend() {
+    var count = updateData();
+    console.log("number of incidents reported in selected area(s): ", count);
+    legendSvg.append("text").attr("x", 220).attr("y", 130)
+      .text("variable A").style("font-size", "15px").attr("alignment-baseline","middle");
   }
 
   //callback function    
@@ -187,6 +190,7 @@
     .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
     .on("click",function(d){
       updateSelected(this,d,datum);
+      updateLegend();
     })
     .on('mouseout', function(d) {
       tooltip.style("visibility", "hidden");

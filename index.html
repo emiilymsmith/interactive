@@ -26,15 +26,19 @@
       #selectPanel {
         background: #efefef;
       }
+
+      #legendSvg {
+        margin-bottom: 10px;
+      }
+
       #zoomedOut {
-        margin-top: 20px;
+        margin-top: 10px;
       }
     </style>
 
     <!-- D3 --->
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="d3.legend.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     
     <title>New York</title>
@@ -67,7 +71,7 @@
 
         <!-- Legend Panel / Right Column -->
         <div class="col" id="legendPanel"> <!--need to figure out how to move these below on smaller window size -->
-          <svg id="legend" height=190 width=200></svg>
+          <svg id="legendSvg" height=190 width=200></svg>
           <svg id="zoomedOut" height=190 width=200></svg>
         </div>
       </div><!-- end row -->
