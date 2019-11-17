@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>New York</title>
     <style>
-      * { font-family: "Helvetica Neue";
+      * { font-family: "Helvetica Neue", "Times New Roman";
       }
       svg {
         background: #efefef;
@@ -18,25 +19,34 @@
       .selected {
         fill: rgb(0, 238, 255);
       }
+
+      div.container {
+        text-align: center;
+      }
     </style>
-  </head>
 
-  <body>
-    <div id="map"></div>
-
+    <!-- D3 --->
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="d3.legend.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
 
-    
+  </head>
+
+  <body>
+    <div class="container">
+    <!-- Title -->
+      <h1 class="title has-text-centered">New York</h1>
+      <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+    <div id="map"></div>
+
     <form id="myForm">
       <label>Select first month of data</label>
       <select id="selectNumber"></select>
-      </br>
+      <br>
       <label>Select last month of data</label>
       <select id="selectNumber2"></select>
-      </br> <label>warning files are large, can't guarantee performance</label>
+      <br> <label>warning files are large, can't guarantee performance</label>
     </form>
     <script>
       var select = document.getElementById("selectNumber"); 
