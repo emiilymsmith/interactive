@@ -1,7 +1,7 @@
 (function() {
   var margin = {top: 50, left: 50, right: 50, bottom: 50},
-  height = 400 - margin.top - margin.bottom,
-  width = 800 - margin.left - margin.right;
+    height = 400 - margin.top - margin.bottom,
+    width = 800 - margin.left - margin.right;
 
   var dropDown1 = d3.select(selectNumber).on('change',function(){updateMonth();});
   var dropDown2 = d3.select(selectNumber2).on('change',function(){updateMonth2();});
@@ -19,8 +19,7 @@
   var selectedList = [];
   var selectedCount = 0;
   updateMonth();
-  d3.queue().defer(d3.json, "NewYork.json")
-  .await(ready)
+  d3.queue().defer(d3.json, "NewYork.json").await(ready);
 
   var projection = d3.geo.albers()
     .center([22, 40.55])
@@ -28,7 +27,7 @@
     .scale(16000);
 
   var path = d3.geoPath()
-    .projection(projection)
+    .projection(projection);
 
   var tooltip = d3.select("body")
     .append("div")
@@ -43,10 +42,12 @@
     var selected = select.options[select.selectedIndex].value; 
     var select2 = document.getElementById("selectNumber2");
     var selected2 = select.options[select2.selectedIndex].value; 
+    
     if(parseInt(selected.split("-")[0])>parseInt(selected2.split("-")[0])){
       select2.selectedIndex = select.selectedIndex;
       selected2 = select.options[select2.selectedIndex].value;
     }
+
     numDatum = 1 + (parseInt(selected2.split("-")[0]) - parseInt(selected.split("-")[0]));
     curDatum = 0;
     queueMonth();
@@ -58,10 +59,12 @@
     var selected = select.options[select.selectedIndex].value; 
     var select2 = document.getElementById("selectNumber2");
     var selected2 = select.options[select2.selectedIndex].value; 
+    
     if(parseInt(selected.split("-")[0])>parseInt(selected2.split("-")[0])){
         select.selectedIndex = select2.selectedIndex;
         selected = select.options[select.selectedIndex].value;
     }
+    
     numDatum = 1 + (parseInt(selected2.split("-")[0]) - parseInt(selected.split("-")[0]));
     curDatum = 0;
     queueMonth();
