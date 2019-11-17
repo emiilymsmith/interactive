@@ -64,7 +64,7 @@
         select.selectedIndex = select2.selectedIndex;
         selected = select.options[select.selectedIndex].value;
     }
-    
+
     numDatum = 1 + (parseInt(selected2.split("-")[0]) - parseInt(selected.split("-")[0]));
     curDatum = 0;
     queueMonth();
@@ -151,6 +151,14 @@
     console.log("number of incidents reported in selected area(s): ",count);
   }
 
+  function legend() {
+    legend = svg.append("g")
+      .attr("class","legend")
+      .attr("transform","translate(50,30)")
+      .style("font-size","12px")
+      .call(d3.legend);
+  }
+
   //callback function    
   function ready (error, data) {
     console.log('This is data', data);
@@ -168,6 +176,7 @@
     svg.selectAll(".county")
     .data(county)
     .enter().append("path")
+    .attr("data-legend", function(d) { return d.properties.NAME})
     .attr("class", "county")
     .attr("d", path)
     .on('mouseover', function(d) {
