@@ -137,18 +137,26 @@
 
   function updateData(){
     count = 0;
+    totalResponseTime = [];
+    countPerBorough = [];
+    i = 0;
     selectedList.forEach(selected => {  
+      totalResponseTime[i] = 0;
+      countPerBorough[i] = 0;
       var checkName = (selected.properties.NAME).toUpperCase();
       datum.forEach(file => {
         file.forEach(report => {
           if ((report.borough) == checkName || (report.borough) == "RICHMOND / " + checkName){
             ++count;
+            totalResponseTime[i] += report.inciResp;
+            ++countPerBorough
             //TODO: use this to connect data to map/ maybe generate a chart with data? I dunno
           }
         })
       })
+      ++i;
     });
-    // console.log("number of incidents reported in selected area(s): ",count);
+    console.log(" area(s): ", totalResponseTime[0]/countPerBorough[0]/60);
     return count;
   }
 
