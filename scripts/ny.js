@@ -158,7 +158,7 @@
   function updateLegend() {
     var count = updateData();
     console.log("number of incidents reported in selected area(s): ", count);
-    legendSvg.append("text").attr("x", 220).attr("y", 130)
+    legendSvg.append("text")
       .text("variable A").style("font-size", "15px").attr("alignment-baseline","middle");
   }
 
