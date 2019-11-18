@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <style>
       svg {
         background: #efefef;
@@ -41,7 +42,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     
-    <title>New York</title>
+    <title>Interactive Design</title>
   </head>
 
   <body>
@@ -49,8 +50,12 @@
     
       <!-- Title -->
       <div id="title">
-        <h1 class="title has-text-centered">New York</h1>
+        <h1 class="title has-text-centered">New York City</h1>
         <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+      </div>
+
+      <div class="entry">
+        <img src="NewYorkMap.png" style="max-width:50%;" >
       </div>
       
       <div class="row">
@@ -62,7 +67,7 @@
             <br>
             <label>Select last month of data</label>
             <select id="selectNumber2"></select>
-            <br> <label>warning files are large, can't guarantee performance</label>
+            <br><br> <label>warning: files are large, can't guarantee performance</label>
           </form>
         </div>
 
