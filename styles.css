@@ -2,6 +2,17 @@ svg {
   background: #efefef92;
 }
 
+img {
+  max-width:100%;
+}
+
+#spin {
+  max-width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .county {
   fill:#e5e5e5;
   stroke: #333;
@@ -18,8 +29,9 @@ svg {
   margin-bottom: 15px;
 }
 
-#info {
+#writeUp {
   text-align: left;
+  margin-top: 120px;
 }
 
 #selectPanel {
@@ -34,8 +46,4 @@ svg {
   margin-bottom: 20px;
   padding-top: 20px;
   padding: 15px;
-}
-
-#info {
-  margin-top: 100px;
 }

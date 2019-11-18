@@ -34,24 +34,29 @@
             <select id="selectNumber2"></select>
             <br><br> <label>Warning: Data files are large, please be patient.</label>
           </form>
+          <div id="spinner">
+            <img id="spin" class="img-fluid" src="images/Loadingsome.gif">
+
+          </div>
         </div>
 
         <!-- Map -->
         <div class="col-6" id="map"></div>
 
         <!-- Legend Panel / Right Column -->
-        <div class="col" id="legendPanel"> <!--need to figure out how to move these below on smaller window size -->
-          <!-- <svg id="legendSvg" height=220 width=auto></svg> -->
+        <div class="col" id="legendPanel">
           <div id="legendHolder">
-            Number of incidents reported in selected area(s):
-            <span id="count"></span>
+            <span>Number of incidents reported in selected area(s):</span>
+            <span id="count"></span><br>
+            <span><br>Average response time (min):</span>
+            <span id="avgResponseT"></span>
           </div>
-          <img class="img-fluid" src="NewYorkMap.png" style="max-width:100%;" >
+          <img class="img-fluid" src="images/NewYorkMap.png">
         </div>
       </div><!-- end row -->
 
       <!-- Write-up -->
-      <div id="info">
+      <div id="writeUp">
         <br>
         <h4>Write-up</h4>
         <p>As a group, we decided to use a map as our interactive graphic. We had considered a few other options, like a sunburst or

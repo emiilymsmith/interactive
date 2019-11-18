@@ -12,7 +12,6 @@
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
   var datum = [];
   var numDatum = 1;
   var curDatum = 0;
@@ -36,6 +35,9 @@
     .style("visibility", "hidden")
     .text("a simple tooltip");
 
+  /**
+   *  Updates according to first month dropdown.
+   */
   function updateMonth(){
     datum = [];
     var select = document.getElementById("selectNumber");
@@ -53,6 +55,9 @@
     queueMonth();
   }
 
+  /**
+   *  Updates according to second month dropdown.
+   */
   function updateMonth2(){
     datum = [];
     var select = document.getElementById("selectNumber");
@@ -70,7 +75,13 @@
     queueMonth();
   }
 
+  /**
+   *  Queue's csv data.
+   */
   function queueMonth(){
+    if(curDatum == 0) {
+      document.getElementById("spin").style.visibility = 'visible';
+    }
     var select = document.getElementById("selectNumber");
     for(i = 0;i<numDatum;++i){
       var q = d3.queue();
@@ -113,14 +124,23 @@
     }
   }
 
+  /**
+   *  Updates month range.
+   */
   function updateDatum(error,data){
     datum[curDatum] = data;
     ++curDatum;
 
-    if(curDatum == numDatum)
+    if(curDatum == numDatum){
+      document.getElementById("spin").style.visibility = 'hidden';
       updateLegend();
+    }
   }
 
+  /**
+   *  Called when a borough is clicked to update list of boroughs.
+   *  Updates legend with borough count.
+   */
   function updateSelected(that,d){
     if(d3.select(that).classed("selected")){
       d3.select(that).classed("selected", false)
@@ -132,56 +152,62 @@
       selectedList[selectedCount] = d;
       ++selectedCount;
     }
-    updateData();
+    updateLegend();
   }
 
+  /**
+   * Collects data to display
+   */
   function updateData(){
     count = 0;
     totalResponseTime = [];
     countPerBorough = [];
-    i = 0;
+    numSelections = 0;
+
     selectedList.forEach(selected => {  
-      totalResponseTime[i] = 0;
-      countPerBorough[i] = 0;
+      totalResponseTime[numSelections] = 0;
+      countPerBorough[numSelections] = 0;
       var checkName = (selected.properties.NAME).toUpperCase();
       datum.forEach(file => {
         file.forEach(report => {
           if ((report.borough) == checkName || (report.borough) == "RICHMOND / " + checkName){
             ++count;
-            totalResponseTime[i] += report.inciResp;
-            ++countPerBorough
-            //TODO: use this to connect data to map/ maybe generate a chart with data? I dunno
+            totalResponseTime[numSelections] += report.inciResp;
+            ++countPerBorough[numSelections];
           }
         })
       })
-      ++i;
+      ++numSelections;
     });
-    console.log(" area(s): ", totalResponseTime[0]/countPerBorough[0]/60);
-    return count;
+
+    var statistics = { totalResponseTime:totalResponseTime, countPerBorough:countPerBorough, numSelections:numSelections, count:count };
+    return statistics;
   }
 
-  // Legend -----------------------------
-  // var legend = d3.select("#legend");
-
+  /**
+   * Updates the legend to display the correctly formatted data.
+   */
   function updateLegend() {
-    var count = updateData();
-    console.log("number of incidents reported in selected area(s): ", count);
-    document.getElementById("count").innerText = count;
+    var statistics = updateData();
+    var avg = 0;
+    for(i=0; i<statistics.numSelections; i++){
+      avg += statistics.totalResponseTime[i]/statistics.countPerBorough[i];
+    }
+    avg /= statistics.numSelections;
+    if(statistics.numSelections == 0){
+      document.getElementById("count").innerText = "Please select a borough.";
+      document.getElementById("avgResponseT").innerText = "Please select a borough.";
+    } else {
+      document.getElementById("count").innerText = statistics.count;
+      document.getElementById("avgResponseT").innerText = (avg/60).toFixed(2);
+    }
   }
 
-  //callback function    
+  /**
+   *  Callback function.
+   */
   function ready (error, data) {
-    console.log('This is data', data);
-    //var csv = csv.feature(data,data.)
     var county = topojson.feature(data, data.objects.tl_2018_36_cousub).features;
-    console.log('This is county', county);
-    //    Object.keys(county).forEach(function (item) {
-    //             // console.log(item); // key, this is the number its associated to.
-    //             // console.log(county[item]); // value
-    //             console.log(county[item].properties.NAME);
-    //         }
-    //    );
-    // uncomment upper block out
 
     svg.selectAll(".county")
     .data(county)
@@ -191,13 +217,11 @@
     .attr("d", path)
     .on('mouseover', function(d) {
       tooltip.style("visibility", "visible");
-      //console.log(d.properties.NAME)
       tooltip.text(d.properties.NAME)
     })
     .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
     .on("click",function(d){
       updateSelected(this,d,datum);
-      updateLegend();
     })
     .on('mouseout', function(d) {
       tooltip.style("visibility", "hidden");
