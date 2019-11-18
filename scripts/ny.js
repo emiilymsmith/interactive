@@ -22,9 +22,9 @@
   d3.queue().defer(d3.json, "NewYork.json").await(ready);
 
   var projection = d3.geo.albers()
-    .center([22, 40.55])
+    .center([22.1, 40.67])
     .translate([ width/2 , height /2])
-    .scale(16000);
+    .scale(25500);
 
   var path = d3.geoPath()
     .projection(projection);
