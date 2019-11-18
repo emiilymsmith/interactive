@@ -1,9 +1,9 @@
 svg {
-  background: #efefef1e;
+  background: #efefef92;
 }
 
 .county {
-  fill:#e3e3e3;
+  fill:#e5e5e5;
   stroke: #333;
   stroke-width: 0.5;
 }
@@ -23,14 +23,14 @@ svg {
 }
 
 #selectPanel {
-  background: #efefef1e;
+  background: #efefef92;
   padding-top: 20px;
 }
 
 #legendHolder {
   height:225px;
   width: 225px;
-  background: #efefef1e;
+  background: #efefef92;
   margin-bottom: 20px;
   padding-top: 20px;
   padding: 15px;
