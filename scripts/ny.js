@@ -118,7 +118,7 @@
     ++curDatum;
 
     if(curDatum == numDatum)
-      updateData();
+      updateLegend();
   }
 
   function updateSelected(that,d){
