@@ -17,7 +17,7 @@
       }
 
       .selected {
-        fill: rgb(0, 238, 255);
+        fill: rgb(252,146,114);
       }
 
       #title {
@@ -30,15 +30,18 @@
 
       #selectPanel {
         background: #efefef;
+        padding-top: 20px;
       }
 
-      #legendSvg {
-        margin-bottom: 10px;
+      #legendHolder {
+        height:200px;
+        width: 200px;
+        background: #efefef;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        padding: 15px;
       }
 
-      #zoomedOut {
-        margin-top: 10px;
-      }
     </style>
 
     <!-- D3 --->
@@ -67,7 +70,7 @@
             <br>
             <label>Select last month of data</label>
             <select id="selectNumber2"></select>
-            <br><br> <label>warning: files are large, can't guarantee performance</label>
+            <br><br> <label>Warning: Data files are large, please be patient.</label>
           </form>
         </div>
 
@@ -76,8 +79,12 @@
 
         <!-- Legend Panel / Right Column -->
         <div class="col" id="legendPanel"> <!--need to figure out how to move these below on smaller window size -->
-          <svg id="legendSvg" height=190 width=200></svg>
-          <img src="NewYorkMap.png" style="max-width:50%;" >
+          <!-- <svg id="legendSvg" height=220 width=auto></svg> -->
+          <div id="legendHolder">
+            Number of incidents reported in selected area(s):
+            <span id="count"></span>
+          </div>
+          <img src="NewYorkMap.png" style="max-width:90%;" >
         </div>
       </div><!-- end row -->
 

@@ -153,13 +153,12 @@
   }
 
   // Legend -----------------------------
-  var legendSvg = d3.select("#legend");
+  // var legend = d3.select("#legend");
 
   function updateLegend() {
     var count = updateData();
     console.log("number of incidents reported in selected area(s): ", count);
-    legendSvg.append("text")
-      .text("variable A").style("font-size", "15px").attr("alignment-baseline","middle");
+    document.getElementById("count").innerText = count;
   }
 
   //callback function    
