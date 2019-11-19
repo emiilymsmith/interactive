@@ -29,9 +29,14 @@ img {
   margin-bottom: 15px;
 }
 
-#writeUp {
+#info {
   text-align: left;
   margin-top: 120px;
+}
+
+#writeUp {
+  text-align: left;
+  margin-top: 20px;
 }
 
 #selectPanel {
