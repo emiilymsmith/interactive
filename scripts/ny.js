@@ -85,7 +85,7 @@
     var select = document.getElementById("selectNumber");
     for(i = 0;i<numDatum;++i){
       var q = d3.queue();
-      q.defer(d3.csv, "/EMS_by_month/" + select.options[select.selectedIndex + i].value,function(d) {
+      q.defer(d3.csv, "EMS_by_month/" + select.options[select.selectedIndex + i].value,function(d) {
         return {
           id : d.CAD_INCIDENT_ID,
           incidentDT : d.INCIDENT_DATETIME,
