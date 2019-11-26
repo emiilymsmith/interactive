@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
 
     <!-- D3 --->
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -18,10 +19,19 @@
     <div class="container">
     
       <!-- Title -->
-      <div id="title">
+      <!-- <div id="title"> --> 
+      <!--  <h1 class="title has-text-centered">New York City</h1> --> 
+      <!--  <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2> --> 
+      <!-- </div> -->
+
+      <!-- New Title Page --> 
+      <div class="home-root" id="title">
         <h1 class="title has-text-centered">New York City</h1>
         <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
-      </div>
+      </div> <!-- end title -->
+
+      <div id="info">
+        <h3>Incidents and Response Time</h3> </div>
       
       <div class="row">
         <!-- Select Panel / Left Column -->
@@ -91,6 +101,28 @@
         </p>
         <br><h6>Created by: Hannah Dolan, Nathan Raymond, Emily Smith</h6>
       </div>
+
+      <br>
+      <div class="static-img" id="static"></div> 
+        <h3><i>Static Image 1</i></h3>
+        <img src="images/vis4.png" />
+      </div><br>
+
+      <div class="static-img" id="static"></div>
+        <h3><i>Static Image 2</i></h3>  
+        <img src="images/vis6.png" />
+      </div><br>
+
+      <div class="static-img" id="static"></div> 
+        <h3><i>Static Image 3</i></h3>
+        <img src="images/vis7.png" />
+      </div><br>
+
+      <div class="static-img" id="static"></div>
+        <h3><i>Static Image 4</i></h3> 
+        <img src="images/vis9.png" />
+      </div>
+
     </div> <!-- end container -->
 
     <script>
@@ -115,22 +147,6 @@
       </script> 
       <script src="scripts/datum.js" type="text/javascript"></script> 
       <script src="scripts/ny.js" type="text/javascript"></script>
-
-    <div class="static"> 
-        <img src="images/vis4.png" />
-    </div><br>
-
-    <div class="static"> 
-      <img src="images/vis6.png" />
-    </div><br>
-
-    <div class="static"> 
-      <img src="images/vis7.png" />
-    </div><br>
-
-    <div class="static"> 
-      <img src="images/vis9.png" />
-    </div><br>
 
   </body>
 </html>
