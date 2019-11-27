@@ -94,7 +94,7 @@ var nyMap = function(){
       document.getElementById("avgResponseT").innerText = "Please select a borough.";
     } else {
       document.getElementById("count").innerText = statistics.count;
-      document.getElementById("avgResponseT").innerText = (avg/60).toFixed(2);
+      document.getElementById("avgResponseT").innerText = secToMin((avg).toFixed(2));
     }
   }
 
@@ -125,3 +125,13 @@ var nyMap = function(){
   return updateLegend;
 };
 var firstVis = nyMap();
+function secToMin(sec){
+  min = Math.floor(sec/60);
+  sec = Math.floor(sec) % 60;
+  console.log("min ",min);
+  console.log("sec ",sec);
+  if(sec < 10){
+    sec = '0' + sec;
+  }
+  return min + " min " + sec + " secs"
+}
