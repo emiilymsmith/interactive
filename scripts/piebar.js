@@ -195,13 +195,39 @@ function dashboard(id, fData){
       leg= legend(tF);  // create the legend.
 }
 
-var freqData=[
-  {State:'AM',freq:{low:10.9, mid:11.3, high:8.1}} 
-  ,{State:'BA',freq:{low:11.4, mid:12.2, high:11.8}}	
-  ,{State:'CE',freq:{low:8.6, mid:7.7, high:7.1}} 
-  ,{State:'DF',freq:{low:20.9, mid:13, high:16.1}} 
-  ,{State:'ES',freq:{low:10.3, mid:10.9, high:14.5}} 
-  ,{State:'GO',freq:{low:10.5, mid:11.4, high:13.3}}
-  ];
-  
+var freqData=[];
+function updateFreqData(){
+  freqData = [];
+  i = 0;
+  inci = ['82','83','87','90','91','92','93','94','95','96'];
+  inci.forEach(dent => {
+    dispR = 0;
+    inciR = 0;
+    inciT = 0;
+    count = 0;
+    found = false;
+    datum.forEach(file => {
+        
+        file.forEach(report => {
+            if(report.inciDispoCode == dent){
+                if(!found){
+                    found = true;
+                    //console.log(dent, " ", secToMin(report.dispResponse + report.inciResp + report.inciTrav))
+                }
+                
+                dispR += report.dispResponse;
+                inciR += report.inciResp;
+                inciT += report.inciTrav;
+                ++count;
+            }
+        })
+    })
+    dispR = parseInt((dispR/count));
+    inciR = parseInt((inciR/count));
+    inciT = parseInt((inciT/count));
+    freqData[i] = {State:dent,freq:{low:dispR,mid:inciR,high:inciT}};
+    ++i;
+    
+  })
   dashboard('#piebar',freqData);
+}

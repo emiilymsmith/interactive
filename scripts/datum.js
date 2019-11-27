@@ -101,6 +101,7 @@ var datum = [];
         if(curDatum == numDatum){
             document.getElementById("spin").style.visibility = 'hidden';
             firstVis();
+            updateFreqData();
         }
     }
 }

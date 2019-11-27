@@ -128,8 +128,6 @@ var firstVis = nyMap();
 function secToMin(sec){
   min = Math.floor(sec/60);
   sec = Math.floor(sec) % 60;
-  console.log("min ",min);
-  console.log("sec ",sec);
   if(sec < 10){
     sec = '0' + sec;
   }
