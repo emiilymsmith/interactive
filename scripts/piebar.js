@@ -1,9 +1,9 @@
 function dashboard(id, fData){
   var barColor = 'steelblue';
-  function segColor(c){ return {low:"#807dba", mid:"#e08214",high:"#41ab5d"}[c]; }
+  function segColor(c){ return {Dispatch:"#807dba", Incident:"#e08214",Travel:"#41ab5d"}[c]; }
   
   // compute total for each state.
-  fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
+  fData.forEach(function(d){d.total=d.freq.Dispatch+d.freq.Incident+d.freq.Travel;});
   
   // function to handle histogram.
   function histoGram(fD){
@@ -183,7 +183,7 @@ function dashboard(id, fData){
   }
   
   // calculate total frequency by segment for all state.
-  var tF = ['low','mid','high'].map(function(d){ 
+  var tF = ['Dispatch','Incident','Travel'].map(function(d){ 
       return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
   });    
   
@@ -225,7 +225,12 @@ function updateFreqData(){
     dispR = parseInt((dispR/count));
     inciR = parseInt((inciR/count));
     inciT = parseInt((inciT/count));
-    freqData[i] = {State:dent,freq:{low:dispR,mid:inciR,high:inciT}};
+    //freqData[i] = {State:dent,freq:{low:dispR,mid:inciR,high:inciT}};
+    /*  Dispatch: Dispatch Response Time
+        Incident: Incident Response Time
+        Travel: Travel Time
+    */
+    freqData[i] = {State:dent,freq:{Dispatch:dispR,Incident:inciR,Travel:inciT}};
     ++i;
     
   })
