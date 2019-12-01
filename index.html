@@ -16,37 +16,42 @@
   </head>
 
   <body>
-    <div class="container">
-      <!-- Navigation -->
-      <div id="navigation">
-        <span><a href="#sectionLink1">
-            Home
-          </a></span>
-        <span><a href="#sectionLink2">
-            Incidents and Response Time
-          </a></span>
-        <span><a href="#sectionLink3">
-            Go to section 3
-          </a></span>
-        <span><a href="#sectionLink4">
-            Section 4
-          </a></span>
-        <span><a href="#sectionLink5">
-            Section 5
-          </a></span>
-        <span><a href="#sectionLink6">
-            Section 6
-          </a></span>
-        <span><a href="#sectionLink7">
-            Section 7
-          </a></span>
-        <span><a href="#sectionLink8">
-            Section 8
-          </a></span>
-        <!-- TODO finish nav links for 8 write-up -->
-      </div>
+    <!-- Navigation -->
+    <div id="navigation">
+      <span><a href="#sectionLink1">
+          Home
+        </a></span>
+      <span><a href="#sectionLink2">
+          Incidents and Response Time
+        </a></span>
+      <span><a href="#sectionLink3">
+          Pie Bar
+        </a></span>
+      <span><a href="#sectionLink4">
+          Section 4
+        </a></span>
+      <span><a href="#sectionLink5">
+          Section 5
+        </a></span>
+      <span><a href="#sectionLink6">
+          Section 6
+        </a></span>
 
-      <div id="section1">
+      <!-- TODO finish nav links for 8 write-up -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btn-danger" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Static Images
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#sectionLink8">Action</a>
+          <a class="dropdown-item" href="#sectionLink9">Another action</a>
+          <a class="dropdown-item" href="#sectionLink10">Something else here</a>
+        </div>
+      </div> <!-- end dropdown -->
+    </div> <!-- end navigation -->
+
+    <div class="container">
+      <div class="section" id="section1">
         <!-- New Title Page --> 
         <div class="home-root" id="title">
           <h1 class="title has-text-centered">New York City</h1>
@@ -54,7 +59,7 @@
         </div> <!-- end title -->
       </div>
 
-      <div id="section2">
+      <div class="section" id="section2">
         <div id="info">
         <h3>Incidents and Response Time</h3> </div>
         <div class="row">
@@ -101,69 +106,70 @@
         </div>
       </div><!-- end of section 2-->
 
-      <div id="section3">
+      <div class="section" id="section3">
+        <h3>Pie Bar</h3>
         <div class="row" id="piebar"></div>
 
       </div><!-- end of section 3-->
       <br>
 
-      <div id="section4">
+      <div class="section" id="section4">
         <div class="static-img" id="static"></div> 
           <h3><i>Static Image 1</i></h3>
           <img src="images/vis4.png" />
       </div><!-- end section 4 -->
       <br>
 
-      <div id="section5">
+      <div class="section" id="section5">
         <div class="static-img" id="static"></div>
           <h3><i>Static Image 2</i></h3>  
           <img src="images/vis6.png" />
       </div><!-- end section 5 -->
       <br>
 
-      <div id="section6">
+      <div class="section" id="section6">
       <div class="static-img" id="static"></div> 
         <h3><i>Static Image 3</i></h3>
         <img src="images/vis7.png" />
       </div><!-- end section 6 -->
       <br>
 
-      <div id="section7">
+      <div class="section" id="section7">
         <div class="static-img" id="static"></div> 
         <h3><i>Static Image 4</i></h3>
         <img src="images/vis4.png" />
       </div><!-- end section 7 -->
       <br>
 
-      <div id="section8">
+      <div class="section" id="section8">
         <div class="static-img" id="static"></div>
         <h3><i>Static Image 5</i></h3>  
         <img src="images/vis5.png" />
       </div><!-- end section 8 -->
       <br>
 
-      <div id="section9">
+      <div class="section" id="section9">
         <div class="static-img" id="static"></div>
           <h3><i>Static Image 7</i></h3> 
           <img src="images/vis7.png" />
       </div><!-- end section 9 -->
       <br>
 
-      <div id="section10">
+      <div class="section" id="section10">
         <div class="static-img" id="static"></div> 
           <h3><i>Static Image 8</i></h3>
           <img src="images/vis8.png" />
       </div><!-- end section 10 -->
       <br>
 
-      <div id="section11">
+      <div class="section" id="section11">
         <div class="static-img" id="static"></div> 
           <h3><i>Static Image 9</i></h3>
           <img src="images/vis9.png" />
       </div><!-- end section 11 -->
       <br>
 
-      <div id="section12">
+      <div class="section" id="section12">
         <div class="static-img" id="static"></div> 
           <h3><i>Static Image 10</i></h3>
           <img src="images/vis10.png" />
@@ -172,7 +178,7 @@
 
 
       <!-- Write-up -->
-      <div id="section13">
+      <div class="section" id="section13">
         <div id="writeUp">
           <br>
           <h3>Write-up</h3>

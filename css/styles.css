@@ -102,11 +102,12 @@ shape-rendering: crispEdges;
   top: 0;
   width: 100%;
   background-color: white;
+  margin-bottom: 100px;
 }
 
 #navigation span {
   flex-grow: 1;
-  height: 50px;
+  height: 40px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -118,21 +119,11 @@ shape-rendering: crispEdges;
 }
 
 /* when a link is clicked, it gets highlighted */
-.highlighted {
+/* .highlighted {
   color: red;
-}
+} */
 
-/* make each section taller */
-#content {
-  margin-top: 50px;
-}
-
-#content div {
-  height: 100vh;
-  /* align the text in the middle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  font-weight: bold;
+.section {
+  padding-top: 90px;
+  /* display: flex;   test */
 }
