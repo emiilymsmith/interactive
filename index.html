@@ -17,149 +17,188 @@
 
   <body>
     <div class="container">
-    
-      <!-- Title -->
-      <!-- <div id="title"> --> 
-      <!--  <h1 class="title has-text-centered">New York City</h1> --> 
-      <!--  <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2> --> 
-      <!-- </div> -->
+      <!-- Navigation -->
+      <div id="navigation">
+        <span><a href="#sectionLink1">
+            Home
+          </a></span>
+        <span><a href="#sectionLink2">
+            Incidents and Response Time
+          </a></span>
+        <span><a href="#sectionLink3">
+            Go to section 3
+          </a></span>
+        <span><a href="#sectionLink4">
+            Section 4
+          </a></span>
+        <span><a href="#sectionLink5">
+            Section 5
+          </a></span>
+        <span><a href="#sectionLink6">
+            Section 6
+          </a></span>
+        <span><a href="#sectionLink7">
+            Section 7
+          </a></span>
+        <span><a href="#sectionLink8">
+            Section 8
+          </a></span>
+        <!-- TODO finish nav links for 8 write-up -->
+      </div>
 
-      <!-- New Title Page --> 
-      <div class="home-root" id="title">
-        <h1 class="title has-text-centered">New York City</h1>
-        <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
-      </div> <!-- end title -->
+      <div id="section1">
+        <!-- New Title Page --> 
+        <div class="home-root" id="title">
+          <h1 class="title has-text-centered">New York City</h1>
+          <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+        </div> <!-- end title -->
+      </div>
 
-      <div id="info">
+      <div id="section2">
+        <div id="info">
         <h3>Incidents and Response Time</h3> </div>
-      
-      <div class="row">
-        <!-- Select Panel / Left Column -->
-        <div class="col" id="selectPanel">
-          <form id="myForm">
-            <label>Select first month of data</label>
-            <select id="selectNumber"></select>
-            <br>
-            <label>Select last month of data</label>
-            <select id="selectNumber2"></select>
-            <br><br> <label>Warning: Data files are large, please be patient.</label>
-          </form>
-          <div id="spinner">
-            <img id="spin" class="img-fluid" src="images/Loadingsome.gif">
+        <div class="row">
+          <!-- Select Panel / Left Column -->
+          <div class="col" id="selectPanel">
+            <form id="myForm">
+              <label>Select first month of data</label>
+              <select id="selectNumber"></select>
+              <br>
+              <label>Select last month of data</label>
+              <select id="selectNumber2"></select>
+              <br><br> <label>Warning: Data files are large, please be patient.</label>
+            </form>
+            <div id="spinner">
+              <img id="spin" class="img-fluid" src="images/Loadingsome.gif">
 
+            </div>
           </div>
-        </div>
 
-        <!-- Map -->
-        <div class="col-6" id="map"></div>
+          <!-- Map -->
+          <div class="col-6" id="map"></div>
 
-        <!-- Legend Panel / Right Column -->
-        <div class="col" id="legendPanel">
-          <div id="legendHolder">
-            <span>Number of incidents reported in selected area(s):</span>
-            <span id="count"></span><br>
-            <span><br>Average response time (min):</span>
-            <span id="avgResponseT"></span>
+          <!-- Legend Panel / Right Column -->
+          <div class="col" id="legendPanel">
+            <div id="legendHolder">
+              <span>Number of incidents reported in selected area(s):</span>
+              <span id="count"></span><br>
+              <span><br>Average response time (min):</span>
+              <span id="avgResponseT"></span>
+            </div>
+            <img class="img-fluid" src="images/NewYorkMap.png">
           </div>
-          <img class="img-fluid" src="images/NewYorkMap.png">
+        </div><!-- end row -->
+
+        <!-- info -->
+        <div id="info">
+          <br>
+          <h3>Dispatch Data</h3>
+          <h5>New York Boroughs</h5>
+          <p>&emsp; New York City is divided into five divisions. The five divisions are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
+          <h5>Response Time</h5> 
+          <p> &emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
+          </p>
         </div>
-      </div><!-- end row -->
+      </div><!-- end of section 2-->
 
-      <!-- info -->
-      <div id="info">
-        <br>
-        <h3>Dispatch Data</h3>
-        <h5>New York Boroughs</h5>
-        <p>&emsp; New York City is divided into five divisions. The five divisions are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
-        <h5>Response Time</h5> 
-        <p> &emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
-        </p>
-      </div>
+      <div id="section3">
+        <div class="row" id="piebar"></div>
 
-      <div class="row" id="piebar">
-
-      </div>
-
-
-      <!-- All of the Static Images --> 
+      </div><!-- end of section 3-->
       <br>
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 1</i></h3>
-        <img src="images/vis1.png" />
-      </div><br>
 
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 2</i></h3>
-        <img src="images/vis2.png" />
-      </div><br>
+      <div id="section4">
+        <div class="static-img" id="static"></div> 
+          <h3><i>Static Image 1</i></h3>
+          <img src="images/vis4.png" />
+      </div><!-- end section 4 -->
+      <br>
 
+      <div id="section5">
+        <div class="static-img" id="static"></div>
+          <h3><i>Static Image 2</i></h3>  
+          <img src="images/vis6.png" />
+      </div><!-- end section 5 -->
+      <br>
+
+      <div id="section6">
       <div class="static-img" id="static"></div> 
         <h3><i>Static Image 3</i></h3>
-        <img src="images/vis3.png" />
-      </div><br>
+        <img src="images/vis7.png" />
+      </div><!-- end section 6 -->
+      <br>
 
-      <div class="static-img" id="static"></div> 
+      <div id="section7">
+        <div class="static-img" id="static"></div> 
         <h3><i>Static Image 4</i></h3>
         <img src="images/vis4.png" />
-      </div><br>
+      </div><!-- end section 7 -->
+      <br>
 
-      <div class="static-img" id="static"></div>
+      <div id="section8">
+        <div class="static-img" id="static"></div>
         <h3><i>Static Image 5</i></h3>  
         <img src="images/vis5.png" />
-      </div><br>
+      </div><!-- end section 8 -->
+      <br>
 
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 6</i></h3>
-        <img src="images/vis6.png" />
-      </div><br>
+      <div id="section9">
+        <div class="static-img" id="static"></div>
+          <h3><i>Static Image 7</i></h3> 
+          <img src="images/vis7.png" />
+      </div><!-- end section 9 -->
+      <br>
 
-      <div class="static-img" id="static"></div>
-        <h3><i>Static Image 7</i></h3> 
-        <img src="images/vis7.png" />
-      </div><br>
+      <div id="section10">
+        <div class="static-img" id="static"></div> 
+          <h3><i>Static Image 8</i></h3>
+          <img src="images/vis8.png" />
+      </div><!-- end section 10 -->
+      <br>
 
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 8</i></h3>
-        <img src="images/vis8.png" />
-      </div><br>
+      <div id="section11">
+        <div class="static-img" id="static"></div> 
+          <h3><i>Static Image 9</i></h3>
+          <img src="images/vis9.png" />
+      </div><!-- end section 11 -->
+      <br>
 
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 9</i></h3>
-        <img src="images/vis9.png" />
-      </div><br>
-
-      <div class="static-img" id="static"></div> 
-        <h3><i>Static Image 10</i></h3>
-        <img src="images/vis10.png" />
-      </div><br>
+      <div id="section12">
+        <div class="static-img" id="static"></div> 
+          <h3><i>Static Image 10</i></h3>
+          <img src="images/vis10.png" />
+      </div> <!-- end section 12 -->
+      <br>
 
 
       <!-- Write-up -->
-      <div id="writeUp">
-        <br>
-        <h3>Write-up</h3>
-        <p>For our interactive design we chose to analyze the EMS Incident Dispatch Data for New York City, provided by the Fire Department of New York City. 
-          As a group, we decided to use a map as our interactive graphic. We had considered a few other options, like a sunburst or bubble chart, but based 
-          on the dataset that we have we felt that a map was the best way to convey our data. The tooltip is the guide to the map and shows the boroughs. The 
-          dropdown lists the range of dates chronologically. We wanted our design to follow a familiar pattern of reading, and so we placed the first 
-          aspect we wish the reader to see on the left. As they continue to scan the page and look to the middle, the data can be filtered through an 
-          interatction on the map to display the results. We wanted to be able to select multiple boroughs at once to fully display the range of the data. 
-          It was important for us to highlight what had been selected in order to show the exact area being examined. Red felt like the right color as 
-          emergency responders correspond to red and white. We chose a minimalist approach in order to keep our visualization from becoming too overwhelming.</p>
-          <p>The first step in the development process was displaying a simple static map. 
-          We began by having the state of New York drawn before narrowing the map down to the specific areas we wanted to examine. Then we chose to add 
-          specific features such as dropdowns for the desired range of months and to display the data. After that it was just a matter of adding any features 
-          we thought would improve our visualization. We broke up the work initially into three categories: creating an interactive map, dividing the data 
-          into modular files, and the front end. At first we were able to work seperately yet in tandem to complete these tasks. Collaboration was vital in the 
-          later stages of development to bring all of the pieces together. We had to connect the sorted data to filter based on selections, then use that result 
-          to clearly display information to the viewer. The final pieces were completed in person in order to finalize our vision and ensure we agreed on the result.</p>
-          <p>Approximately twenty hours were spent developing the application. The aspects that took the most time were breaking up the csv file and updating the legend. 
-          Since the data file is large, we had to divide the csv into multiple files in order to access the data. Using the csv with our data was a 
-          relatively new process for the group. It was a steep learning curve figuring out how the parts worked together to create a dynamic visualization.  
-        </p>
-        <br><h6>Created by: Hannah Dolan, Nathan Raymond, Emily Smith</h6>
-      </div>
-      
+      <div id="section13">
+        <div id="writeUp">
+          <br>
+          <h3>Write-up</h3>
+          <p>For our interactive design we chose to analyze the EMS Incident Dispatch Data for New York City, provided by the Fire Department of New York City. 
+            As a group, we decided to use a map as our interactive graphic. We had considered a few other options, like a sunburst or bubble chart, but based 
+            on the dataset that we have we felt that a map was the best way to convey our data. The tooltip is the guide to the map and shows the boroughs. The 
+            dropdown lists the range of dates chronologically. We wanted our design to follow a familiar pattern of reading, and so we placed the first 
+            aspect we wish the reader to see on the left. As they continue to scan the page and look to the middle, the data can be filtered through an 
+            interatction on the map to display the results. We wanted to be able to select multiple boroughs at once to fully display the range of the data. 
+            It was important for us to highlight what had been selected in order to show the exact area being examined. Red felt like the right color as 
+            emergency responders correspond to red and white. We chose a minimalist approach in order to keep our visualization from becoming too overwhelming.</p>
+            <p>The first step in the development process was displaying a simple static map. 
+            We began by having the state of New York drawn before narrowing the map down to the specific areas we wanted to examine. Then we chose to add 
+            specific features such as dropdowns for the desired range of months and to display the data. After that it was just a matter of adding any features 
+            we thought would improve our visualization. We broke up the work initially into three categories: creating an interactive map, dividing the data 
+            into modular files, and the front end. At first we were able to work seperately yet in tandem to complete these tasks. Collaboration was vital in the 
+            later stages of development to bring all of the pieces together. We had to connect the sorted data to filter based on selections, then use that result 
+            to clearly display information to the viewer. The final pieces were completed in person in order to finalize our vision and ensure we agreed on the result.</p>
+            <p>Approximately twenty hours were spent developing the application. The aspects that took the most time were breaking up the csv file and updating the legend. 
+            Since the data file is large, we had to divide the csv into multiple files in order to access the data. Using the csv with our data was a 
+            relatively new process for the group. It was a steep learning curve figuring out how the parts worked together to create a dynamic visualization.  
+          </p>
+          <br><h6>Created by: Hannah Dolan, Nathan Raymond, Emily Smith</h6>
+        </div>
+      </div> <!-- end section 13-->
+
 
     </div> <!-- end container -->
 
@@ -184,6 +223,7 @@
       }
       </script> 
       <script src="scripts/datum.js" type="text/javascript"></script> 
+      <script src="scripts/navigation.js" type="text/javascript"></script> 
       <script src="scripts/ny.js" type="text/javascript"></script>
       <script src="scripts/piebar.js" type="text/javascript"></script>
 
