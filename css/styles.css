@@ -105,25 +105,7 @@ shape-rendering: crispEdges;
   margin-bottom: 100px;
 }
 
-#navigation span {
-  flex-grow: 1;
-  height: 40px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#navigation span a {
-  display: inline-block;
-}
-
-/* when a link is clicked, it gets highlighted */
-/* .highlighted {
-  color: red;
-} */
-
 .section {
-  padding-top: 90px;
+  padding-top: 70px;
   /* display: flex;   test */
 }
