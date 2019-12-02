@@ -193,7 +193,6 @@ function dashboard(id, fData){
   var hG = histoGram(sF), // create the histogram.
       pC = pieChart(tF), // create the pie-chart.
       leg= legend(tF);  // create the legend.
-  return {hG,pC,leg};
 }
 
 var freqData=[];
@@ -230,9 +229,16 @@ function updateFreqData(){
             }
         })
     })
-    dispR = parseInt((dispR/count));
-    inciR = parseInt((inciR/count));
-    inciT = parseInt((inciT/count));
+    if(count >0){
+        dispR = parseInt((dispR/count));
+        inciR = parseInt((inciR/count));
+        inciT = parseInt((inciT/count));
+    }
+    else{
+        dispR = 0;
+        inciR = 0;
+        inciT = 0;
+    }
     //freqData[i] = {State:dent,freq:{low:dispR,mid:inciR,high:inciT}};
     /*  Dispatch: Dispatch Response Time
         Incident: Incident Response Time
@@ -242,5 +248,6 @@ function updateFreqData(){
     ++i;
     
   })
-  tracker = dashboard('#piebar',freqData);
+  dashboard('#piebar',freqData);
+  tracker = "something";
 }
