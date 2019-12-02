@@ -193,10 +193,18 @@ function dashboard(id, fData){
   var hG = histoGram(sF), // create the histogram.
       pC = pieChart(tF), // create the pie-chart.
       leg= legend(tF);  // create the legend.
+  return {hG,pC,leg};
 }
 
 var freqData=[];
+var tracker;
 function updateFreqData(){
+  if(tracker != null){
+      piebar = document.getElementById("piebar");
+      while (piebar.firstChild) {
+        piebar.removeChild(piebar.firstChild);
+      }
+  }
   freqData = [];
   i = 0;
   inci = ['82','83','87','90','91','92','93','94','95','96'];
@@ -234,5 +242,5 @@ function updateFreqData(){
     ++i;
     
   })
-  dashboard('#piebar',freqData);
+  tracker = dashboard('#piebar',freqData);
 }
