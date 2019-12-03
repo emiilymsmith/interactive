@@ -1,6 +1,6 @@
 function dashboard(id, fData){
   var barColor = 'steelblue';
-  function segColor(c){ return {Dispatch:"#807dba", Incident:"#e08214",Travel:"#41ab5d"}[c]; }
+  function segColor(c){ return {Dispatch:"#E4503D", Incident:"#C6E856",Travel:"#1E59B0"}[c]; }
   
   // compute total for each state.
   fData.forEach(function(d){d.total=d.freq.Dispatch+d.freq.Incident+d.freq.Travel;});
