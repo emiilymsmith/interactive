@@ -196,7 +196,14 @@ function dashboard(id, fData){
 }
 
 var freqData=[];
+var tracker;
 function updateFreqData(){
+  if(tracker != null){
+      piebar = document.getElementById("piebar");
+      while (piebar.firstChild) {
+        piebar.removeChild(piebar.firstChild);
+      }
+  }
   freqData = [];
   i = 0;
   inci = ['82','83','87','90','91','92','93','94','95','96'];
@@ -222,9 +229,16 @@ function updateFreqData(){
             }
         })
     })
-    dispR = parseInt((dispR/count));
-    inciR = parseInt((inciR/count));
-    inciT = parseInt((inciT/count));
+    if(count >0){
+        dispR = parseInt((dispR/count));
+        inciR = parseInt((inciR/count));
+        inciT = parseInt((inciT/count));
+    }
+    else{
+        dispR = 0;
+        inciR = 0;
+        inciT = 0;
+    }
     //freqData[i] = {State:dent,freq:{low:dispR,mid:inciR,high:inciT}};
     /*  Dispatch: Dispatch Response Time
         Incident: Incident Response Time
@@ -235,4 +249,5 @@ function updateFreqData(){
     
   })
   dashboard('#piebar',freqData);
+  tracker = "something";
 }
