@@ -1,4 +1,4 @@
-function plotScatter(data,precinct){
+function plotScatter(data,precinct,maxCount,maxTime){
   //set dimensions and margins
   var margin = {top: 10, right: 30, bottom: 30, left: 60},
       width = 460 - margin.left - margin.right,
@@ -25,7 +25,7 @@ function plotScatter(data,precinct){
 
     // Add X axis
     var x = d3.scaleLinear()
-      .domain([0, 25])
+      .domain([0, maxCount])
       .range([ 0, width ]);
     var xAxis = Svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -33,7 +33,7 @@ function plotScatter(data,precinct){
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, 80])
+      .domain([0, maxTime])
       .range([ height, 0]);
     Svg.append("g")
       .call(d3.axisLeft(y));
@@ -121,7 +121,9 @@ function getData(){
 tracked = "something";
   var data = [];
   i = 0;
-  var precinct = [[40,52,"Bronx"], [60,94,"Brooklyn"], [100,115,"Queens"], [120,123,"Staten Island"]];
+  maxCount = 0;
+  maxTime = 0;
+  var precinct = ["ARREST","INJURY","ABDPN","INJMAJ"];
   precinct.forEach(district => {
     index = -1; // represents 1 day
     idk = []; //rename, keeps track of 4 different numeric values per day
@@ -139,25 +141,25 @@ tracked = "something";
           idk[index][4] = 0;
           idk[index][5] = district[2];
         }
-        if(report.policePrecinct >= district[0] && report.policePrecinct <= district[1]){
-          if(report.finalCallType == "ARREST")
+        if(report.initCallType == district){
             ++idk[index][1];
-          if(report.finalCallType == "INJURY")
-            ++idk[index][2];
-          if(report.finalCallType == "ABDPN")
-            ++idk[index][3];
-          if(report.finalCallType == "INJMAJ")
-            ++idk[index][4];
+            idk[index][3] += report.inciResp;
+            
         }
         
 
       })
     })
     idk.forEach(day =>{
+      if(day[1]>0)
+        day[3] = day[3]/day[1];
+      if(day[1] > maxCount)
+        maxCount = day[1];
+      if(day[3] > maxTime)
+        maxTime = day[3];
       data[i] = {Sepal_Length:day[1],Sepal_Width:day[2],Petal_Length:day[3],Petal_Width:day[4],Species:day[5]};
       ++i
     })
-    console.log(data);
   });
   names = [];
   {
@@ -166,7 +168,7 @@ tracked = "something";
       names[i++]=area[2];
     })
   }
-  plotScatter(data,names);
+  plotScatter(data,names,maxCount,maxTime);
 };
 function getDate(date){
   var day = date.split(" ");
