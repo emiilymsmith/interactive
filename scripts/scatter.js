@@ -1,4 +1,4 @@
-function plotScatter(){
+function plotScatter(data,precinct){
   //set dimensions and margins
   var margin = {top: 10, right: 30, bottom: 30, left: 60},
       width = 460 - margin.left - margin.right,
@@ -13,7 +13,6 @@ function plotScatter(){
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-  var incidents = [];
   /**
    *  Sorting by precinct
    *  Bronx         40-52
@@ -22,50 +21,11 @@ function plotScatter(){
    *  Staten Island 120-123
    */
   
-   function getDate(date){
-      var day = date.split(" ");
-      return day[0];
-   };
+   {
 
-  function getData(){
-    var data = {}
-    var precinct = [[40,52], [60,94], [100,115], [120,123]];
-    var index = -1; // represents 1 day
-    var idk = []; //rename, keeps track of 4 different numeric values per day
-    precinct.forEach(district => {
-      count = 0;
-      datum.forEach(file => {
-        file.forEach(report => {
-          if(index == -1 || getDate(report.incidentDT) != idk[index][0]){
-              index++;
-              idk[index][0] = getDate(report.incidentDT); // move it to the day were working on
-          }
-          if(report.policePrecinct >= district[0] && report.policePrecinct <= district[1]){
-            getDate(report.firstAssignDT);
-            ++count;
-            
-          }
-          /**
-           * 
-           * 4 things to go in scatterplot 
-           * num incidents
-           * num by type
-           * avg response time
-           * avg travel time
-           */
-
-        })
-      })
-    });
-  };
-
-
-  function build(){
-    // d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv", function(data){
-    console.log(data);
     // Add X axis
     var x = d3.scaleLinear()
-      .domain([4, 8])
+      .domain([0, 25])
       .range([ 0, width ]);
     var xAxis = Svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -73,7 +33,7 @@ function plotScatter(){
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, 9])
+      .domain([0, 80])
       .range([ height, 0]);
     Svg.append("g")
       .call(d3.axisLeft(y));
@@ -88,9 +48,10 @@ function plotScatter(){
         .attr("y", 0);
 
     // Color scale: give me a specie name, I return a color
+    
     var color = d3.scaleOrdinal()
-      .domain(["setosa", "versicolor", "virginica" ])
-      .range([ "#440154ff", "#21908dff", "#fde725ff"])
+      .domain(precinct)
+      .range([ "#440154FF", "#3B528BFF" ,"#21908CFF", "#5DC963FF", "#FDE725FF"])
 
     // Add brushing
     var brush = d3.brushX()                 // Add the brush feature using the d3.brush function
@@ -149,4 +110,65 @@ function plotScatter(){
 
   };
 };
-plotScatter();
+tracked = null;
+function getData(){
+  if(tracked != null){
+    piebar = document.getElementById("scatter");
+    while (piebar.firstChild) {
+      piebar.removeChild(piebar.firstChild);
+    }
+  }
+tracked = "something";
+  var data = [];
+  i = 0;
+  var precinct = [[40,52,"Bronx"], [60,94,"Brooklyn"], [100,115,"Queens"], [120,123,"Staten Island"]];
+  precinct.forEach(district => {
+    index = -1; // represents 1 day
+    idk = []; //rename, keeps track of 4 different numeric values per day
+    count = 0;
+    
+    datum.forEach(file => {
+      file.forEach(report => {
+        if(index == -1 || getDate(report.incidentDT) != idk[index][0]){
+          index++;
+          idk[index] = [];
+          idk[index][0] = getDate(report.incidentDT); // move it to the day were working on
+          idk[index][1] = 0;
+          idk[index][2] = 0;
+          idk[index][3] = 0;
+          idk[index][4] = 0;
+          idk[index][5] = district[2];
+        }
+        if(report.policePrecinct >= district[0] && report.policePrecinct <= district[1]){
+          if(report.finalCallType == "ARREST")
+            ++idk[index][1];
+          if(report.finalCallType == "INJURY")
+            ++idk[index][2];
+          if(report.finalCallType == "ABDPN")
+            ++idk[index][3];
+          if(report.finalCallType == "INJMAJ")
+            ++idk[index][4];
+        }
+        
+
+      })
+    })
+    idk.forEach(day =>{
+      data[i] = {Sepal_Length:day[1],Sepal_Width:day[2],Petal_Length:day[3],Petal_Width:day[4],Species:day[5]};
+      ++i
+    })
+    console.log(data);
+  });
+  names = [];
+  {
+    i = 0;
+    precinct.forEach(area =>{
+      names[i++]=area[2];
+    })
+  }
+  plotScatter(data,names);
+};
+function getDate(date){
+  var day = date.split(" ");
+  return day[0];
+};

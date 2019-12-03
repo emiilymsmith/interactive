@@ -212,16 +212,9 @@ function updateFreqData(){
     inciR = 0;
     inciT = 0;
     count = 0;
-    found = false;
     datum.forEach(file => {
-        
         file.forEach(report => {
             if(report.inciDispoCode == dent){
-                if(!found){
-                    found = true;
-                    //console.log(dent, " ", secToMin(report.dispResponse + report.inciResp + report.inciTrav))
-                }
-                
                 dispR += report.dispResponse;
                 inciR += report.inciResp;
                 inciT += report.inciTrav;
@@ -246,7 +239,6 @@ function updateFreqData(){
     */
     freqData[i] = {State:dent,freq:{Dispatch:dispR,Incident:inciR,Travel:inciT}};
     ++i;
-    
   })
   dashboard('#piebar',freqData);
   tracker = "something";
