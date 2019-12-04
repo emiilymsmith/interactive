@@ -60,6 +60,7 @@ img {
   margin:50px auto;
 }
 
+#piebar svg { background: #ffffff; }
 path {  stroke: #fff; }
 path:hover {  opacity:0.9; }
 #piebar rect:hover {  fill:#215096; } 
@@ -92,38 +93,47 @@ shape-rendering: crispEdges;
   width:50px;
 }
 
+#img7 {
+  padding: 60px 10px;
+}
+
+#img9{
+  padding: 60px 10px 5px;
+}
+
 #img4 {
-  max-width: 75%;
+  max-width: 80%;
   height: auto;
   float: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 10px 70px;
 }
 
-#img5 {
+#img5-6 {
   max-width: 50%;
   height: auto;
   float: left;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 80px; 
 }
 
-#img6 {
-  max-width: 50%;
-  height: auto;
-  float: right;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+#img10 {
+  padding-top: 200px
 }
 
 /* Scatterplot styling */
 
 #scatterNarative{
   float:right;
+}
 
+#scatter svg{ 
+  background: #ffffff;
 }
 
 /* Navigation styling */
