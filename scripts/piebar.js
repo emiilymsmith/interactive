@@ -17,6 +17,22 @@ function dashboard(id, fData){
           .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
           .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
+    hGsvg.append("text")
+        .attr("transform", "translate(" + (hGDim.w/2) + " ," + (hGDim.h +20) + ")")
+        .style("text-anchor", "middle")
+        //.text("Code");
+        .text('82\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa083\xa0\xa0\xa0'+ 
+        '\xa0\xa0\xa0\xa0\xa087\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa0\xa090\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa091\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa0\xa092\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa093\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa094\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa095\xa0\xa0\xa0'+
+        '\xa0\xa0\xa0\xa0\xa096\xa0\xa0\xa0');
+          
+
       // create function for x-axis mapping.
       var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
               .domain(fD.map(function(d) { return d[0]; }));
