@@ -92,7 +92,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
       // If no selection, back to initial coordinate. Otherwise, update X axis domain
       if(!extent){
         if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
-        x.domain([0, 25])
+        x.domain([0, maxTime])
       }else{
         x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
         scatter.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done

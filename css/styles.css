@@ -62,7 +62,7 @@ img {
 
 path {  stroke: #fff; }
 path:hover {  opacity:0.9; }
-#piebar rect:hover {  fill:#215096; } /* this might affect scatter */
+#piebar rect:hover {  fill:#215096; } 
 .axis {  font: 10px sans-serif; }
 .legend tr{    border-bottom:1px solid grey; }
 .legend tr:first-child{    border-top:1px solid grey; }
