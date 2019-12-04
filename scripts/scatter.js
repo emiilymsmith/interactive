@@ -51,7 +51,8 @@ function plotScatter(data,precinct,maxCount,maxTime){
     
     var color = d3.scaleOrdinal()
       .domain(precinct)
-      .range([ "#440154FF", "#3B528BFF" ,"#21908CFF", "#5DC963FF", "#FDE725FF"])
+      /*       purple,   dark blue,  dark teal,   red,       gold,      lime,    */
+      .range(["#440154", "#3959b9", "#21908C", "#ed121c", "#f6d309", "#00ff27"])
 
     // Add brushing
     var brush = d3.brushX()                 // Add the brush feature using the d3.brush function
@@ -123,7 +124,7 @@ tracked = "something";
   i = 0;
   maxCount = 0;
   maxTime = 0;
-  var precinct = ["ARREST","INJURY","ABDPN","INJMAJ"];
+  var precinct = ["ARREST","INJURY","ABDPN","INJMAJ", "CARD", "UNC", "INBLED", "MVAINJ"];
   precinct.forEach(district => {
     index = -1; // represents 1 day
     idk = []; //rename, keeps track of 4 different numeric values per day
