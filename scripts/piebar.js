@@ -17,9 +17,9 @@ function dashboard(id, fData){
           .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
           .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
-    hGsvg.append("text")
-        .attr("transform", "translate(" + (hGDim.w/2) + " ," + (hGDim.h +20) + ")")
-        .style("text-anchor", "middle")
+      hGsvg.append("text")
+           .attr("transform", "translate(" + (hGDim.w/2) + " ," + (hGDim.h +20) + ")")
+           .style("text-anchor", "middle")
         //.text("Code");
         .text('82\xa0\xa0\xa0'+
         '\xa0\xa0\xa0\xa083\xa0\xa0\xa0'+ 

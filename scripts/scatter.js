@@ -30,6 +30,11 @@ function plotScatter(data,precinct,maxCount,maxTime){
     var xAxis = Svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
+    
+    xAxis.append("text")
+      .attr("transform", "translate(" + (width/2) + " ," + (height) + ")")
+      .style("text-anchor", "middle")
+      .text("Time");
 
     // Add Y axis
     var y = d3.scaleLinear()
