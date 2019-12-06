@@ -127,12 +127,14 @@
         </div>
         <div class="row">
           <!-- Select Panel / Left Column -->
-          <div class="col" id="selectPanel">
+          <div class="col">
+            <div id="selectPanel">
             <span>Select preferred date range above.</span>
             <span>Warning: Data files are large, please be patient as they load.</span>
             <div id="spinner">
               <img id="spin" class="img-fluid" src="images/Loadingsome.gif">
             </div>
+          </div>
             <img class="img-fluid" src="images/NewYorkMap.png" id="miniNY">
           </div>
 
@@ -145,7 +147,11 @@
               <span>Number of incidents reported in selected area(s):</span>
               <span id="count"></span><br>
               <span><br>Average response time (min):</span>
-              <span id="avgResponseT"></span>
+              <span id="avgResponseT"></span><br>
+              <span><br>Min Time:</span>
+              <span id="minTime"></span><br>
+              <span><br>Max Time:</span>
+              <span id="maxTime"></span>
             </div>
             
           </div>

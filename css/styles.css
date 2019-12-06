@@ -15,6 +15,10 @@ img {
   margin-right: auto;
 }
 
+#miniNY {
+  padding-top: 20px;
+}
+
 .county {
   fill:#e5e5e5;
   stroke: #333;
@@ -42,7 +46,6 @@ img {
 #selectPanel {
   background: #efefef92;
   padding-top: 20px;
-  height: 400px;
 }
 
 #legendHolder {

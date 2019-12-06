@@ -75,6 +75,8 @@ var nyMap = function(){
               maxTime = report.inciResp;
             if(minTime == -1 ||report.inciResp < minTime)
               minTime = report.inciResp;
+            if(report.inciResp == -1)
+              console.log(report);
           }
         })
       })
@@ -98,9 +100,15 @@ var nyMap = function(){
     if(statistics.numSelections == 0){
       document.getElementById("count").innerText = "Please select a borough.";
       document.getElementById("avgResponseT").innerText = "Please select a borough.";
+      document.getElementById("minTime").innerText = "Please select a borough.";
+      document.getElementById("maxTime").innerText = "Please select a borough.";
+
     } else {
       document.getElementById("count").innerText = statistics.count;
       document.getElementById("avgResponseT").innerText = secToMin((avg).toFixed(2));
+      document.getElementById("minTime").innerText = statistics.minTime;
+      document.getElementById("maxTime").innerText = statistics.maxTime;
+
     }
   }
 
