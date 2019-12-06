@@ -148,6 +148,10 @@ shape-rendering: crispEdges;
   background: #ffffff;
 }
 
+#sIcon {
+  width: 20px;
+}
+
 /* Navigation styling */
 /* basic styling to make the links bigger */
 #navigation {

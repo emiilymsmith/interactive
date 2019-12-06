@@ -12,7 +12,6 @@ function plotScatter(data,callType,maxCount,maxTime){
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-            
    {
 
     // Add X axis
@@ -106,6 +105,8 @@ function plotScatter(data,callType,maxCount,maxTime){
 
     } //update chart function
   };
+  console.log('colors', color("SICK"), color("INJURY"), color("DIFFBR"), color("EDP"), color("DRUG"), color("UNC"));
+
 };
 tracked = null;
 function getData(){
@@ -120,7 +121,6 @@ tracked = "something";
   i = 0;
   maxCount = 0;
   maxTime = 0;
-  //var callType = ["ARREST","INJURY","ABDPN","INJMAJ", "CARD", "UNC", "INBLED", "MVAINJ"];
   var callType = ["SICK", "INJURY", "DIFFBR", "EDP", "DRUG", "UNC"] 
   callType.forEach(district => {
     index = -1; // represents 1 day
@@ -144,8 +144,6 @@ tracked = "something";
             idk[index][3] += report.inciResp;
             
         }
-        
-
       })
     })
     idk.forEach(day =>{
