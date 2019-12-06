@@ -36,7 +36,7 @@
               <a class="nav-link" href="#sectionLink3">Incidents and Response Time</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sectionLink4">Scatter Plot</a>
+              <a class="nav-link" href="#sectionLink4">Call Type</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#sectionLink5">Dispatch Codes</a>
@@ -111,15 +111,16 @@
         <div class="static-img" id="static"></div>
           <img src="images/vis7.png" />
           <div id="info">
-          <p><br>&emsp;Between 2013 and 2019 the total number of incidents is always over 95 thousand. During certain times of the year the 
-            density of incidents is significantly higher but with these number response efficiency is vital.
+          <p><br>&emsp;Between 2013 and 2019, the total number of incidents is always over 95 thousand. During certain times of the year the 
+            density of incidents is significantly higher but considering the high number of emergencies, the communication and response by 
+            emergency services is vital.
           </p></div>
       </div><!-- End of line chart -->
       
       <!-- Section 3 -->
       <div class="section" id="section3">
-        <p>&emsp;Within New York, the different boroughs have various numbers of incidents and levels of effeciency. Using the map, the boroughs can be 
-          selected to learn more about the different groupings within the selected dates. 
+        <p>&emsp;Within New York City, the different boroughs have various numbers of incidents and levels of efficiency. Using the map, the boroughs can be 
+          selected to learn more about the different groupings within the selected dates. Multiple boroughs can be selected at once.
         </p>
         <div id="info">
           <h3>Incidents and Response Time</h3>
@@ -152,7 +153,8 @@
         <div id="info">
           <br>
           <h5>Response Time</h5> 
-            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
+            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on 
+            location.  
           </p>
         </div> <br><br>
 
@@ -164,8 +166,10 @@
 
         <div id="info">
         <h3>Prioritizing the Calls</h3>
-        <p>&emsp;The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
-            dispatch can make accurate calls. 
+        <p>&emsp;The first responders generally seem to have accurate information about the severity of the incident. With the information provided to them, 
+          dispatch needs to make a call about how severe an incident is and decide what resources are available to send. The initial severity level is the 
+          priority code dishpatch assigns a call when it first comes in. The final severity code is given when the incident closes. To be effecient with 
+          resources, the emergency services need to be able to trust the severity is accurate. 
           </p>
         </div>
 
@@ -184,7 +188,7 @@
         
         <!-- Question Page --> 
         <div class="home-root" id="question">
-            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call tyes make up the most frequent 
+            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call types make up the most frequent 
               incidents?</i></h2>
         </div> <!-- end question -->
 
@@ -194,19 +198,22 @@
             <img src="images/vis9.png" />
         </div>
         <h3>The Frequency</h3>
-        <p>Because we can see the the call types that occur the most, we can see the ratio of the call types to the response time per day.</p>
+        <p>Over the past several years, the most frequent call type was "Sick" followed by "Injury", "Dificult Breather", and "Psychiatric Patient".
+          Because we can see the call types that occur the most, we can see the ratio of the call types to the response time per day.  
+        </p>
       
       </div><!-- end of section 3-->
 
       <!-- Section 4 -->
       <div class="section" id="section4">
         <div id="brushZoom">
-          <h3>Scatter Plot</h3>
+          <h3>Call Type</h3>
           <div id="scatter"></div>
   
           <div class="w-50" id="scatterNarative">
-            <h5>Narrative Title</h5>
-              <p>&emsp;Here we can see the ratio between the top call types to how much time to respond each day in the selected time range. </p>
+            <h5>The Ratio</h5>
+              <p>&emsp;In knowing the most common call types, we can see the ratio between the top call types to how much time to respond each day in the 
+                  selected time range.</p>
             </div>
         </div>
       </div><!-- end section 4 -->
@@ -222,9 +229,11 @@
         <div class="section" id="section5">
         <div id="codes">
           <h3>Dispatch Codes</h3>
+          <p>&emsp;Here is the breakdown between the travel time and the dispatch response time. The dispatch response time is the time between when
+            the incident was created in the dispatch system and when a unit is assigned to that incident. The travel time is the time between when the 
+            unit is assigned and when they arrive at the site of the incident. The moment when an incident is first created to when emergency services arrive
+            is the incident response time. The incident disposition code reports what the outcome of the incident was.</p>
           <div class="row" id="piebar"></div>
-          <p>&emsp;Here is the breakdown of what is taking the most time for 
-              each dispatch code. The incident disposition code reports what the outcome of the incident was.</p>
           <div class="table">
             <table>  
               <tr>
@@ -261,15 +270,25 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <br><h3>Travel Time</h3>
+            <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. We can see that there is a larger difference from 
+            dispatch time and the travel time.
+            </p>
+        </div>
+
          <!-- The weird bubble static vis --> 
          <div id="img10">
-            <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. </p>
             <div class="static-img" id="static"></div>
             <img src="images/vis10.png" />
           </div>
 
         <div id="info">
-          <p>&emsp;Here is the breakdown of which borough has the best response time. </p>
+          <br><h3>Dispatch Time</h3>
+          <p>&emsp;Considering the average dispatch time in seconds for each Borough, Staten Island has the quickest dispatch time.
+          </p>
         </div>
 
          <!-- Dispatch Response by Borough the boxes one -->

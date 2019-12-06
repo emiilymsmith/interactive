@@ -25,7 +25,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
 
     // Add X axis
     var x = d3.scaleLinear()
-      .domain([0, maxCount])
+      .domain([0, maxCount+150])
       .range([ 0, width ]);
     var xAxis = Svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -38,7 +38,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, maxTime])
+      .domain([0, maxTime+150])
       .range([ height, 0]);
     Svg.append("g")
       .call(d3.axisLeft(y));
@@ -98,7 +98,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
       // If no selection, back to initial coordinate. Otherwise, update X axis domain
       if(!extent){
         if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
-        x.domain([0, maxCount])
+        x.domain([0, maxCount+150])
       }else{
         x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
         scatter.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
