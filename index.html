@@ -2,12 +2,331 @@
 <html>
   <head>
     <meta charset="utf-8">
+<<<<<<< Updated upstream
     <style>
       * { font-family: "Helvetica Neue";
       }
       svg {
         background: #efefef;
       }
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- D3 --->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    
+    <title>Interactive Design</title>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <div id="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">EMS</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#sectionLink1">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionLink2">Background</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionLink3">Incidents and Response Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionLink4">Scatter Plot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionLink5">Dispatch Codes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sectionLink6">Conclusion</a>
+            </li>
+
+            <!-- Month selection -->
+            <li class="nav-item" id="form">
+              <div class="float-right">
+                <form id="myForm">
+                  <label>First month</label>
+                  <select id="selectNumber"></select>
+                  <label>Last month</label>
+                  <select id="selectNumber2"></select>
+                </form>
+              </div> <!-- end month selection-->
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div> <!-- end navigation -->
+
+    <div class="container">
+      <div class="section" id="section1">
+        <!-- New Title Page --> 
+        <div class="home-root" id="title">
+          <h1 class="title has-text-centered">New York City</h1>
+          <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
+        </div> <!-- end title -->
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section" id="section2">
+        <div class="row">
+          <div class="col-6">
+            <h3>The City that Never Sleeps</h3>
+            <p>&emsp; Within New York City, there are over 8 million people. Manhattan is the most densely populated county in the
+              United States. Every year there are thousands of incidents that require emergency medical services. In emergencies,
+              seconds can make all the difference.</p><br><br>
+          </div>
+        </div> <!-- end row -->
+
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <h3>FDNY</h3>
+            <p>&emsp; The data was provided by the Fire Department of New York City. The FDNY EMS is responsible for the organization 
+              and dispatch of all ambulances in New York City. In accordance with the Health Insurance 
+              Portability and Accountability Act some of the data has been modified to protect individials privacy. The data was
+              found on <a href="https://data.cityofnewyork.us/Public-Safety/EMS-Incident-Dispatch-Data/76xm-jjuj">NYC OpenData</a>.
+            </p>
+        </div>
+      
+        <div id="info">
+          <br>
+          <h3>Dispatch Data</h3>
+          <h5>The Data</h5>
+          <p>&emsp; The data is made up of incidents created in the EMS Computer Aided Dispatch System from 2013 to 2018. Changing the date in the 
+            toolbar will adjust all of the dynamic visualizations.
+          </p>
+          <h5>New York Boroughs</h5>
+          <p>&emsp; New York City is seperated into five divisions. They are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
+        </div>
+      </div><!-- end of section 2-->
+
+      <!-- Number of Incidents line chart -->
+      <div id="img7">
+        <div class="static-img" id="static"></div>
+          <img src="images/vis7.png" />
+          <div id="info">
+          <p><br>&emsp;Between 2013 and 2019, the total number of incidents is always over 95 thousand. During certain times of the year the 
+            density of incidents is significantly higher but considering the high number of emergencies, the communication and response by 
+            emergency services is vital.
+          </p></div>
+        </div>
+      </div><!-- End of line chart -->
+      
+      <!-- Section 3 -->
+      <div class="section" id="section3">
+        <p>&emsp;Within New York City, the different boroughs have various numbers of incidents and levels of response effeciency. Using the map, 
+          the boroughs can be selected to learn more about the different groupings within the selected dates. Multiple boroughs can be selected at once.
+        </p>
+        <div id="info">
+          <h3>Incidents and Response Time</h3>
+        </div>
+        <div class="row">
+          <!-- Select Panel / Left Column -->
+          <div class="col" id="selectPanel">
+            <span>Select preferred date range above.</span>
+            <span>Warning: Data files are large, please be patient as they load.</span>
+            <div id="spinner">
+              <img id="spin" class="img-fluid" src="images/Loadingsome.gif">
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="col-6" id="map"></div>
+
+          <!-- Legend Panel / Right Column -->
+          <div class="col" id="legendPanel">
+            <div id="legendHolder">
+              <span>Number of incidents reported in selected area(s):</span>
+              <span id="count"></span><br>
+              <span><br>Average response time (min):</span>
+              <span id="avgResponseT"></span>
+            </div>
+            <img class="img-fluid" src="images/NewYorkMap.png">
+          </div>
+        </div><!-- end row -->
+
+        <div id="info">
+          <br>
+          <h5>Response Time</h5> 
+            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
+          </p>
+        </div> <br><br>
+
+        <!-- Question Page --> 
+        <div class="home-root" id="question">
+            <h2 class="subtitle has-text-centered"><i>Given how important efficiency is, do first responders have the information to prioritize different 
+              calls?</i></h2>
+          </div> <!-- end question -->
+
+        <div id="info">
+        <h3>Prioritizing the Calls</h3>
+        <p>&emsp;The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
+            dispatch can make accurate calls. 
+          </p>
+        </div>
+
+        <!-- The Severity bar charts -->
+        <div id="img5-6">
+            <div class="static-img" id="static"></div>
+              <img src="images/vis5.png" />
+          </div>
+        </div>
+        <div id="img5-6">
+          <div class="static-img" id="static"></div> 
+            <img src="images/vis6.png" />
+        </div><!-- end of severity bar charts --> 
+        
+        <!-- Question Page --> 
+        <div class="home-root" id="question">
+            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call tyes make up the most frequent 
+              incidents?</i></h2>
+        </div> <!-- end question -->
+
+        <!-- Top Final Call Types bar chart -->
+        <div id="img9">
+          <div class="static-img" id="static"></div> 
+            <img src="images/vis9.png" />
+        </div>
+        <h3>The Frequency</h3>
+        <p>Because we can see the the call types that occur the most, we can see the ratio of the call types to the response time per day.</p>
+      
+      </div><!-- end of section 3-->
+
+      <!-- Section 4 -->
+      <div class="section" id="section4">
+        <div id="brushZoom">
+          <h3>Scatter Plot</h3>
+          <div id="scatter"></div>
+  
+          <div class="w-50" id="scatterNarative">
+            <h5>Narrative Title</h5>
+              <p>&emsp;Here we can see the ratio between the top call types to how much time to respond each day in the selected time range. </p>
+          </div>
+        </div>
+      </div><!-- end section 4 -->
+
+        <!-- something is going on at the end of section 4 -->
+
+      <!-- Question Page --> 
+      <div class="home-root" id="question">
+          <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the reponse time?</i></h2>
+      </div> <!-- end question -->
+
+      <!-- Section 5 -->
+      <div class="section" id="section5">
+        <div id="codes">
+          <h3>Dispatch Codes</h3>
+          <div class="row" id="piebar"></div>
+          <p>&emsp;Here is the breakdown of what is taking the most time for each dispatch code. The incident disposition code reports what the outcome 
+            of the incident was.</p>
+        </div>
+
+        <div class="table">
+          <table>  
+            <tr>
+              <td>82</td>
+              <td>Transporting Patient</td>
+              <td>83</td>
+              <td>Patient Pronounced Dead</td>
+            </tr>
+            <tr>
+              <td>87</td>
+              <td>Cancelled</td>
+              <td>90</td>
+              <td>Unfounded</td>
+            </tr>
+            <tr>
+              <td>91</td>
+              <td>Condition Corrected</td>
+              <td>92</td>
+              <td>Treated Not Transported</td>
+            </tr>
+            <tr>
+              <td>93</td>
+              <td>Refused Medical Aid</td>
+              <td>94</td>
+              <td>Treated and Transported</td>
+            </tr>
+            <tr>
+              <td>95</td>
+              <td>Triaged at Scene No Transport</td>
+              <td>96</td>
+              <td>Patient Gone on Arrival</td>
+            </tr>
+          </table>
+          <br>
+        </div> <!-- end table -->
+
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <h3>Travel Time</h3>
+            <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time.</p>
+          </div>
+        </div>
+        
+        <!-- The weird bubble static vis --> 
+        <div id="img10">
+          <div class="static-img" id="static"></div>
+            <img src="images/vis10.png" /> 
+        </div><!-- end of bubble static vis -->
+
+        <div id="info">
+          <br><h3>Dispatch Time</h3>
+          <p>&emsp;Here is the breakdown of which borough has the best response time. </p>
+        </div>
+
+         <!-- Dispatch Response by Borough the boxes one -->
+         <div id="img4">
+            <div class="static-img" id="static"></div> 
+              <img src="images/vis4.png" />
+          </div>
+
+      </div><!-- end section 5 -->
+
+      <!-- Conclusion -->
+      <div class="section" id="section6">
+        <div id="conclusion">
+          <h3>Conclusion</h3>
+          <p>&emsp;Effeciency is important. We can explore how effecient different boroughs are, and how the effeciency changes with frequency, and we can 
+            explore how the different disposition codes interact with the effeciency. </p>
+          <p>&emsp;For our interactive design we chose to analyze the EMS Incident Dispatch Data for New York City, provided by the Fire Department of New York City. 
+            As a group, we decided to use a map as our interactive graphic. We had considered a few other options, like a sunburst or bubble chart, but based 
+            on the dataset that we have we felt that a map was the best way to convey our data. The tooltip is the guide to the map and shows the boroughs. The 
+            dropdown lists the range of dates chronologically. We wanted our design to follow a familiar pattern of reading, and so we placed the first 
+            aspect we wish the reader to see on the left. As they continue to scan the page and look to the middle, the data can be filtered through an 
+            interatction on the map to display the results. We wanted to be able to select multiple boroughs at once to fully display the range of the data. 
+            It was important for us to highlight what had been selected in order to show the exact area being examined. Red felt like the right color as 
+            emergency responders correspond to red and white. We chose a minimalist approach in order to keep our visualization from becoming too overwhelming.</p>
+            <p>&emsp;The first step in the development process was displaying a simple static map. 
+            We began by having the state of New York drawn before narrowing the map down to the specific areas we wanted to examine. Then we chose to add 
+            specific features such as dropdowns for the desired range of months and to display the data. After that it was just a matter of adding any features 
+            we thought would improve our visualization. We broke up the work initially into three categories: creating an interactive map, dividing the data 
+            into modular files, and the front end. At first we were able to work seperately yet in tandem to complete these tasks. Collaboration was vital in the 
+            later stages of development to bring all of the pieces together. We had to connect the sorted data to filter based on selections, then use that result 
+            to clearly display information to the viewer. The final pieces were completed in person in order to finalize our vision and ensure we agreed on the result.</p>
+            <p>Approximately twenty hours were spent developing the application. The aspects that took the most time were breaking up the csv file and updating the legend. 
+            Since the data file is large, we had to divide the csv into multiple files in order to access the data. Using the csv with our data was a 
+            relatively new process for the group. It was a steep learning curve figuring out how the parts worked together to create a dynamic visualization.  
+          </p>
+          <br><h6>Created by: Hannah Dolan, Nathan Raymond, Emily Smith</h6>
+        </div> <!-- Conclusion -->
+      </div> <!-- end section 6 -->
+
+    </div> <!-- end container -->
+>>>>>>> Stashed changes
 
       .county {
         fill:#e3e3e3;

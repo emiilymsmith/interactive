@@ -1,0 +1,173 @@
+/* Map interaction and parent styling */
+
+svg {
+  background: #efefef92;
+}
+
+img {
+  max-width:100%;
+}
+
+#spin {
+  max-width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.county {
+  fill:#e5e5e5;
+  stroke: #333;
+  stroke-width: 0.5;
+}
+
+.selected {
+  fill: rgb(228, 80, 61);
+}
+
+#title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+#info {
+  text-align: left;
+}
+
+#conclusion {
+  text-align: left;
+}
+
+#selectPanel {
+  background: #efefef92;
+  padding-top: 20px;
+}
+
+#legendHolder {
+  height:225px;
+  width: 225px;
+  background: #efefef92;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding: 15px;
+}
+
+#table td, th {
+    padding: 50px;
+    text-anchor: middle;
+    border: none;
+    text-align: center;
+    stroke: none;
+    border: none;
+    background: none;
+    fill:none;
+}
+
+/* Bar Graph and Pie Chart */
+
+#piebar {
+  width:1060px;
+  margin:50px auto;
+}
+
+#piebar svg { background: #ffffff; }
+path {  stroke: #fff; }
+path:hover {  opacity:0.9; }
+#piebar rect:hover {  fill:#215096; } 
+.axis {  font: 10px sans-serif; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path, .axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+
+.legend{
+  margin-bottom:76px;
+  display:inline-block;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.legend td{
+  padding:4px 5px;
+  vertical-align:bottom;
+}
+
+.legendFreq, .legendPerc{
+  align: right;
+  width:50px;
+}
+
+#img7 {
+  padding: 60px 10px;
+}
+
+#img9{
+  padding: 60px 10px 5px;
+}
+
+#img4 {
+  max-width: 80%;
+  height: auto;
+  float: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px 20px;
+}
+
+#img5-6 {
+  max-width: 50%;
+  height: auto;
+  float: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 80px; 
+}
+
+#img10 {
+  padding-top: 25px;
+  text-align: right;
+}
+
+/* Scatterplot styling */
+
+#scatterNarative{
+  float:right;
+}
+
+#scatter svg{ 
+  background: #ffffff;
+}
+
+/* Navigation styling */
+/* basic styling to make the links bigger */
+#navigation {
+  display: flex;
+  /* make the navbar alway stay on top */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+.section {
+  padding-top: 70px;
+  /* display: flex;   test */
+}
+
+#form {
+  padding-top: 8px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
