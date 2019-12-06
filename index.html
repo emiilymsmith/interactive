@@ -36,7 +36,7 @@
               <a class="nav-link" href="#sectionLink3">Incidents and Response Time</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sectionLink4">Scatter Plot</a>
+              <a class="nav-link" href="#sectionLink4">Call Type</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#sectionLink5">Dispatch Codes</a>
@@ -64,13 +64,15 @@
     </div> <!-- end navigation -->
 
     <div class="container">
+      <!-- Section 1 -->
       <div class="section" id="section1">
         <!-- New Title Page --> 
-        <div class="home-root" id="title">
+        <div class="home-rootTitle" id="title">
           <h1 class="title has-text-centered">New York City</h1>
           <h2 class="subtitle has-text-centered">EMS Incident Dispatch Data</h2>
         </div> <!-- end title -->
-      </div>
+
+      </div> <!-- end Section 1 -->
 
       <!-- Section 2 -->
       <div class="section" id="section2">
@@ -92,7 +94,7 @@
               Portability and Accountability Act some of the data has been modified to protect individials privacy. The data was
               found on <a href="https://data.cityofnewyork.us/Public-Safety/EMS-Incident-Dispatch-Data/76xm-jjuj">NYC OpenData</a>.
             </p>
-        </div>
+        </div> <!-- end row -->
       
         <div id="info">
           <br>
@@ -104,6 +106,7 @@
           <h5>New York Boroughs</h5>
           <p>&emsp; New York City is seperated into five divisions. They are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
         </div>
+
       </div><!-- end of section 2-->
 
       <!-- Number of Incidents line chart -->
@@ -111,8 +114,9 @@
         <div class="static-img" id="static"></div>
           <img src="images/vis7.png" />
           <div id="info">
-          <p><br>&emsp;Between 2013 and 2019 the total number of incidents is always over 95 thousand. During certain times of the year the 
-            density of incidents is significantly higher but with these number response efficiency is vital.
+          <p><br>&emsp;Between 2013 and 2019, the total number of incidents is always over 95 thousand. During certain times of the year the 
+            density of incidents is significantly higher but considering the high number of emergencies, the communication and response by 
+            emergency services is vital.
           </p></div>
       </div><!-- End of line chart -->
       
@@ -152,7 +156,8 @@
         <div id="info">
           <br>
           <h5>Response Time</h5> 
-            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
+            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on 
+            location.  
           </p>
         </div> <br><br>
 
@@ -164,8 +169,10 @@
 
         <div id="info">
         <h3>Prioritizing the Calls</h3>
-        <p>&emsp;The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
-            dispatch can make accurate calls. 
+        <p>&emsp;The first responders generally seem to have accurate information about the severity of the incident. With the information provided to them, 
+          dispatch needs to make a call about how severe an incident is and decide what resources are available to send. The initial severity level is the 
+          priority code dishpatch assigns a call when it first comes in. The final severity code is given when the incident closes. To be effecient with 
+          resources, the emergency services need to be able to trust the severity is accurate. 
           </p>
         </div>
 
@@ -179,12 +186,10 @@
           <div class="static-img" id="static"></div> 
             <img src="images/vis6.png" />
         </div><!-- end of severity bar charts --> 
-
-        <!-- The formatting above is wrong and needs to be fixed -->
         
         <!-- Question Page --> 
         <div class="home-root" id="question">
-            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call tyes make up the most frequent 
+            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call types make up the most frequent 
               incidents?</i></h2>
         </div> <!-- end question -->
 
@@ -192,95 +197,117 @@
         <div id="img9">
           <div class="static-img" id="static"></div> 
             <img src="images/vis9.png" />
-        </div>
+        </div> <!-- end bar chart -->
+
         <h3>The Frequency</h3>
-        <p>Because we can see the the call types that occur the most, we can see the ratio of the call types to the response time per day.</p>
+        <p>Over the past several years, the most frequent call type was "Sick" followed by "Injury", "Dificult Breather", and "Psychiatric Patient".
+          Because we can see the call types that occur the most, we can see the ratio of the call types to the response time per day.  
+        </p>
       
       </div><!-- end of section 3-->
 
       <!-- Section 4 -->
       <div class="section" id="section4">
         <div id="brushZoom">
-          <h3>Scatter Plot</h3>
+          <h3>Call Type</h3>
           <div id="scatter"></div>
   
           <div class="w-50" id="scatterNarative">
-            <h5>Narrative Title</h5>
-              <p>&emsp;Here we can see the ratio between the top call types to how much time to respond each day in the selected time range. </p>
-            </div>
+            <h5>The Ratio</h5>
+              <p>&emsp;In knowing the most common call types, we can see the ratio between the top call types to how much time to respond each day in the 
+                  selected time range.</p>
+          </div>
         </div>
+
       </div><!-- end section 4 -->
 
-        <!-- something is going on at the end of section 4 -->
+      <!-- Question Page --> 
+      <div class="home-root" id="question">
+          <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the reponse time?</i></h2>
+      </div> <!-- end question -->
 
-        <!-- Question Page --> 
-        <div class="home-root" id="question">
-            <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the reponse time?</i></h2>
-        </div> <!-- end question -->
-
-        <!-- Section 5 -->
-        <div class="section" id="section5">
-        <div id="codes">
-          <h3>Dispatch Codes</h3>
-          <div class="row" id="piebar"></div>
-          <p>&emsp;Here is the breakdown of what is taking the most time for 
-              each dispatch code. The incident disposition code reports what the outcome of the incident was.</p>
-          <div class="table">
-            <table>  
+      <!-- Section 5 -->
+      <div class="section" id="section5">
+       <div id="codes">
+        <h3>Dispatch Codes</h3>
+        <p>&emsp;Here is the breakdown between the travel time and the dispatch response time. The dispatch response time is the time between when
+          the incident was created in the dispatch system and when a unit is assigned to that incident. The travel time is the time between when the 
+          unit is assigned and when they arrive at the site of the incident. The moment when an incident is first created to when emergency services arrive
+          is the incident response time. The incident disposition code reports what the outcome of the incident was.</p>
+        <div class="row" id="piebar"></div>
+          <div class="table"><!-- Table -->
+            <table> 
               <tr>
                 <td>82</td>
                 <td>Transporting Patient</td>
+                <td>&emsp;</td>
                 <td>83</td>
                 <td>Patient Pronounced Dead</td>
               </tr>
               <tr>
                 <td>87</td>
                 <td>Cancelled</td>
+                <td>&emsp;</td>
                 <td>90</td>
                 <td>Unfounded</td>
               </tr>
               <tr>
                 <td>91</td>
                 <td>Condition Corrected</td>
+                <td>&emsp;</td>
                 <td>92</td>
                 <td>Treated Not Transported</td>
               </tr>
               <tr>
                 <td>93</td>
                 <td>Refused Medical Aid</td>
+                <td>&emsp;</td>
                 <td>94</td>
                 <td>Treated and Transported</td>
               </tr>
               <tr>
-              <td>95</td>
-              <td>Triaged at Scene No Transport</td>
-              <td>96</td>
-              <td>Patient Gone on Arrival</td>
+                <td>95</td>
+                <td>Triaged at Scene No Transport</td>
+                <td>&emsp;</td>
+                <td>96</td>
+                <td>Patient Gone on Arrival</td>
               </tr>
             </table>
-          </div>
+          </div> <!-- end table -->
+       </div>
+
+       <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <br><h3>Travel Time</h3>
+          <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. We can see that there is a larger difference from 
+          dispatch time and the travel time.
+          </p>
+         </div>
         </div>
 
-         <!-- The weird bubble static vis --> 
-         <div id="img10">
-            <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. </p>
-            <div class="static-img" id="static"></div>
-            <img src="images/vis10.png" />
-          </div>
+       <!-- The weird bubble static vis --> 
+       <div id="img10">
+        <div class="static-img" id="static"></div>
+        <img src="images/vis10.png" />
+       </div>
 
-        <div id="info">
-          <p>&emsp;Here is the breakdown of which borough has the best response time. </p>
-        </div>
+       <div id="info">
+        <br><h3>Dispatch Time</h3>
+        <p>&emsp;Considering the average dispatch time in seconds for each Borough, Staten Island has the quickest dispatch time.
+        </p>
+       </div>
 
-         <!-- Dispatch Response by Borough the boxes one -->
-         <div id="img4">
-            <div class="static-img" id="static"></div> 
-              <img src="images/vis4.png" />
-          </div>
-      </div><!-- end section 5 -->
+       <!-- Dispatch Response by Borough the boxes one -->
+       <div id="img4">
+        <div class="static-img" id="static"></div> 
+          <img src="images/vis4.png" />
+       </div><!-- end image -->
+
+      </div> <!-- end section 5 -->
 
       <!-- Conclusion -->
-      <div class="section" id="section6">
+       <div class="section" id="section6">
         <div id="conclusion">
           <h3>Conclusion</h3>
           <p>&emsp;Effeciency is important. We can explore how effecient different boroughs are, and how the effeciency changes with frequency, and we can 
