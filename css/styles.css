@@ -53,6 +53,17 @@ img {
   padding: 15px;
 }
 
+#table td, th {
+    padding: 50px;
+    text-anchor: middle;
+    border: none;
+    text-align: center;
+    stroke: none;
+    border: none;
+    background: none;
+    fill:none;
+}
+
 /* Bar Graph and Pie Chart */
 
 #piebar {

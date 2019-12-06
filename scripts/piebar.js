@@ -3,7 +3,7 @@ function dashboard(id, fData){
   function segColor(c){ return {Dispatch:"#E4503D", Incident:"#C6E856",Travel:"#1E59B0"}[c]; }
   
   // compute total for each state.
-  fData.forEach(function(d){d.total=d.freq.Dispatch+d.freq.Incident+d.freq.Travel;});
+  fData.forEach(function(d){d.total=d.freq.Dispatch+d.freq.Travel;});
   
   // function to handle histogram.
   function histoGram(fD){

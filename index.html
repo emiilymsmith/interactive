@@ -76,8 +76,7 @@
             <h3>The City that Never Sleeps</h3>
             <p>&emsp; Within New York City, there are over 8 million people. Manhattan is the most densely populated county in the
               United States. Every year there are thousands of incidents that require emergency medical services. In emergencies,
-              seconds can make all the difference. 
-            </p><br>
+              seconds can make all the difference.</p><br><br>
           </div>
         </div> <!-- end row -->
 
@@ -85,7 +84,8 @@
             <div class="col-6"></div>
             <div class="col-6">
               <h3>FDNY</h3>
-              <p>&emsp; The data was provided by the Fire Department of New York City. In accordance with the Health Insurance 
+              <p>&emsp; The data was provided by the Fire Department of New York City. The FDNY EMS is responsible for the organization 
+                and dispatch of all ambulances in New York City. In accordance with the Health Insurance 
                 Portability and Accountability Act some of the data has been modified to protect individials privacy. The data was
                 found on <a href="https://data.cityofnewyork.us/Public-Safety/EMS-Incident-Dispatch-Data/76xm-jjuj">NYC OpenData</a>.
               </p>
@@ -94,34 +94,27 @@
         <div id="info">
           <br>
           <h3>Dispatch Data</h3>
+          <h5>The Data</h5>
+          <p>&emsp; The data is made up of incidents created in the EMS Computer Aided Dispatch System from 2013 to 2018. </p>
           <h5>New York Boroughs</h5>
-          <p>&emsp; New York City is divided into five divisions. The five divisions are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
+          <p>&emsp; New York City is seperated into five divisions. They are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
           <br>
-          <h5>Lorem Ipsum</h5>
-          <p>&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div><!-- end of section 2-->
 
+       <!-- Number of Incidents line chart -->
+       <div id="img7">
+          <div class="static-img" id="static"></div>
+            <img src="images/vis7.png" />
+          <p>&emsp;Between 2013 and 2019 the total number of incidents is always over 95 thousand. During certain times of the year the 
+            density of incidents is significantly higher but with these number response efficiency is vital.
+          </p>
+        </div>
+      
       <div class="section" id="section3">
+        <p>Within New York, the different boroughs have various numbers of incidents and levels of effeciency. Using the map, the boroughs can be 
+          selected to learn more about the different groupings within the selected dates. 
+        </p>
         <div id="info">
           <h3>Incidents and Response Time</h3>
         </div>
@@ -158,83 +151,122 @@
         </div> <br><br>
 
         <!-- Number of Incidents line chart -->
-        <div id="img7">
+        <!-- <div id="img7">
           <div class="static-img" id="static"></div>
             <img src="images/vis7.png" />
-        </div>
+        </div> -->
+
+        <!-- The Severity bar charts -->
+        <h5>Given how important efficiency is, do first responders have the information to prioritize different calls?</h5>
+        <div id="img5-6">
+            <div class="static-img" id="static"></div>
+              <img src="images/vis5.png" />
+          </div>
+  
+        <div id="img5-6">
+          <div class="static-img" id="static"></div> 
+            <img src="images/vis6.png" />
+        </div>  
+
+        <p>The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
+          dispatch can make accurate calls. 
+        </p>
 
         <!-- Top Final Cally Types bar chart -->
+        <p>Given that the initial severity is accurate, what kind of call tyes make up the most frequent incidents?</p>
         <div id="img9">
           <div class="static-img" id="static"></div> 
             <img src="images/vis9.png" />
         </div>
         <br>
+        <p>Because we can see the the call types that occur the most, we can see the ratio of the call types to the response time per day.</p>
       </div><!-- end of section 3-->
+
+      <div class="section" id="section5">
+          <div id="brushZoom">
+            <h3>Scatter Plot</h3>
+            <div id="scatter"></div>
+          </div>
+  
+          <div class="w-50" id="scatterNarative">
+            <h5>Narrative Title</h5>
+              <p>&emsp;Here we can see the ratio between the top call types to how much time to respond each day in the selected time range. </p>
+          </div>
+          
+          <br>
 
       <div class="section" id="section4">
         <div id="info">
           <h3>Narrative</h3>
-            <p>&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-              culpa qui officia deserunt mollit anim id est laborum.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>&emsp;For the different dispatch codes, what is the phases of the reponse time? Here is the breakdown of what is taking the most time for 
+              each dispatch code.</p>
         </div> <!-- end narrative -->
 
         <div id="codes">
           <h3>Dispatch Codes</h3>
           <div class="row" id="piebar"></div>
-        </div><br>
-
-        <!-- Dispatch Response by Borough the boxes one -->
-        <div id="img4">
-          <div class="static-img" id="static"></div> 
-            <img src="images/vis4.png" />
+          <p>The incident disposition code reports what the outcome of the incident was.</p>
+          <div class="table">
+            <table>  
+              <tr>
+                <td>82</td>
+                <td>Transporting Patient</td>
+                <td>83</td>
+                <td>Patient Pronounced Dead</td>
+              </tr>
+              <tr>
+                <td>87</td>
+                <td>Cancelled</td>
+                <td>90</td>
+                <td>Unfounded</td>
+              </tr>
+              <tr>
+                <td>91</td>
+                <td>Condition Corrected</td>
+                <td>92</td>
+                <td>Treated Not Transported</td>
+              </tr>
+              <tr>
+                <td>93</td>
+                <td>Refused Medical Aid</td>
+                <td>94</td>
+                <td>Treated and Transported</td>
+              </tr>
+              <tr>
+              <td>95</td>
+              <td>Triaged at Scene No Transport</td>
+              <td>96</td>
+              <td>Patient Gone on Arrival</td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <br>
 
-        <!-- The Severity bar charts -->
-        <div id="img5-6">
-          <div class="static-img" id="static"></div>
-            <img src="images/vis5.png" />
-        </div>
-
-        <div id="img5-6">
-          <div class="static-img" id="static"></div> 
-            <img src="images/vis6.png" />
-        </div>
-
+         <!-- The last static vis --> 
+         <div id="img10">
+            <p>
+                We can see that there is a larger difference from dispatch time and the travel time. 
+              </p>
+            <div class="static-img" id="static"></div>
+            <img src="images/vis10.png" />
+          </div>
       </div><!-- end section 4 -->
 
-      <div class="section" id="section5">
-        <div id="brushZoom">
-          <h3>Scatter Plot</h3>
-          <div id="scatter"></div>
-        </div>
-
-        <div class="w-50" id="scatterNarative">
-          <h5>Narrative Title</h5>
-            <p>&emsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-        
-        <br>
-        <!-- The last static vis --> 
-        <div id="img10">
-          <div class="static-img" id="static"></div>
-          <img src="images/vis10.png" />
-        </div>
-        <br>
+         <!-- Dispatch Response by Borough the boxes one -->
+         <div id="img4">
+           <p>Here is the breakdown of which borough has the best response time. </p>
+            <div class="static-img" id="static"></div> 
+              <img src="images/vis4.png" />
+          </div>
       </div><!-- end section 5 -->
 
       <!-- Conclusion -->
       <div class="section" id="section6">
         <div id="conclusion">
           <h3>Conclusion</h3>
-          <p>For our interactive design we chose to analyze the EMS Incident Dispatch Data for New York City, provided by the Fire Department of New York City. 
+          <p>&emsp;Effeciency is important. We can explore how effecient different boroughs are, and how the effeciency changes with frequency, and we can 
+            explore how the different disposition codes interact with the effeciency. </p>
+          <p>&emsp;For our interactive design we chose to analyze the EMS Incident Dispatch Data for New York City, provided by the Fire Department of New York City. 
             As a group, we decided to use a map as our interactive graphic. We had considered a few other options, like a sunburst or bubble chart, but based 
             on the dataset that we have we felt that a map was the best way to convey our data. The tooltip is the guide to the map and shows the boroughs. The 
             dropdown lists the range of dates chronologically. We wanted our design to follow a familiar pattern of reading, and so we placed the first 
@@ -242,7 +274,7 @@
             interatction on the map to display the results. We wanted to be able to select multiple boroughs at once to fully display the range of the data. 
             It was important for us to highlight what had been selected in order to show the exact area being examined. Red felt like the right color as 
             emergency responders correspond to red and white. We chose a minimalist approach in order to keep our visualization from becoming too overwhelming.</p>
-            <p>The first step in the development process was displaying a simple static map. 
+            <p>&emsp;The first step in the development process was displaying a simple static map. 
             We began by having the state of New York drawn before narrowing the map down to the specific areas we wanted to examine. Then we chose to add 
             specific features such as dropdowns for the desired range of months and to display the data. After that it was just a matter of adding any features 
             we thought would improve our visualization. We broke up the work initially into three categories: creating an interactive map, dividing the data 
