@@ -53,11 +53,11 @@ img {
   padding: 15px;
 }
 
-#table td, th {
+#table table, td, tr, th {
     padding: 50px;
     text-anchor: middle;
     border: none;
-    text-align: center;
+    text-align: left;
     stroke: none;
     border: none;
     background: none;
@@ -109,7 +109,7 @@ shape-rendering: crispEdges;
 }
 
 #img9{
-  padding: 60px 10px 5px;
+  padding: 10px 10px 5px;
 }
 
 #img4 {
@@ -120,7 +120,7 @@ shape-rendering: crispEdges;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  padding: 20px 10px 70px;
+  padding: 20px 10px 45px;
 }
 
 #img5-6 {
@@ -130,8 +130,8 @@ shape-rendering: crispEdges;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 50px;
-  padding-bottom: 80px; 
+  padding-top: 5px;
+  padding-bottom: 20px; 
 }
 
 #img10 {
