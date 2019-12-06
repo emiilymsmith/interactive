@@ -36,10 +36,10 @@
               <a class="nav-link" href="#sectionLink3">Incidents and Response Time</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sectionLink4">Dispatch Codes</a>
+              <a class="nav-link" href="#sectionLink4">Scatter Plot</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sectionLink5">Scatter Plot</a>
+              <a class="nav-link" href="#sectionLink5">Dispatch Codes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#sectionLink6">Conclusion</a>
@@ -70,6 +70,7 @@
         </div> <!-- end title -->
       </div>
 
+      <!-- Section 2 -->
       <div class="section" id="section2">
         <div class="row">
           <div class="col-6">
@@ -80,39 +81,42 @@
           </div>
         </div> <!-- end row -->
 
-          <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6">
-              <h3>FDNY</h3>
-              <p>&emsp; The data was provided by the Fire Department of New York City. The FDNY EMS is responsible for the organization 
-                and dispatch of all ambulances in New York City. In accordance with the Health Insurance 
-                Portability and Accountability Act some of the data has been modified to protect individials privacy. The data was
-                found on <a href="https://data.cityofnewyork.us/Public-Safety/EMS-Incident-Dispatch-Data/76xm-jjuj">NYC OpenData</a>.
-              </p>
-          </div>
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <h3>FDNY</h3>
+            <p>&emsp; The data was provided by the Fire Department of New York City. The FDNY EMS is responsible for the organization 
+              and dispatch of all ambulances in New York City. In accordance with the Health Insurance 
+              Portability and Accountability Act some of the data has been modified to protect individials privacy. The data was
+              found on <a href="https://data.cityofnewyork.us/Public-Safety/EMS-Incident-Dispatch-Data/76xm-jjuj">NYC OpenData</a>.
+            </p>
+        </div>
       
         <div id="info">
           <br>
           <h3>Dispatch Data</h3>
           <h5>The Data</h5>
-          <p>&emsp; The data is made up of incidents created in the EMS Computer Aided Dispatch System from 2013 to 2018. </p>
+          <p>&emsp; The data is made up of incidents created in the EMS Computer Aided Dispatch System from 2013 to 2018. Changing the date in the 
+            toolbar will adjust all of the dynamic visualizations.
+          </p>
           <h5>New York Boroughs</h5>
           <p>&emsp; New York City is seperated into five divisions. They are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
-          <br>
         </div>
       </div><!-- end of section 2-->
 
-       <!-- Number of Incidents line chart -->
-       <div id="img7">
-          <div class="static-img" id="static"></div>
-            <img src="images/vis7.png" />
-          <p>&emsp;Between 2013 and 2019 the total number of incidents is always over 95 thousand. During certain times of the year the 
+      <!-- Number of Incidents line chart -->
+      <div id="img7">
+        <div class="static-img" id="static"></div>
+          <img src="images/vis7.png" />
+          <div id="info">
+          <p><br>&emsp;Between 2013 and 2019 the total number of incidents is always over 95 thousand. During certain times of the year the 
             density of incidents is significantly higher but with these number response efficiency is vital.
-          </p>
-        </div>
+          </p></div>
+      </div><!-- End of line chart -->
       
+      <!-- Section 3 -->
       <div class="section" id="section3">
-        <p>Within New York, the different boroughs have various numbers of incidents and levels of effeciency. Using the map, the boroughs can be 
+        <p>&emsp;Within New York, the different boroughs have various numbers of incidents and levels of effeciency. Using the map, the boroughs can be 
           selected to learn more about the different groupings within the selected dates. 
         </p>
         <div id="info">
@@ -146,18 +150,24 @@
         <div id="info">
           <br>
           <h5>Response Time</h5> 
-            <p> &emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
+            <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on location.  
           </p>
         </div> <br><br>
 
-        <!-- Number of Incidents line chart -->
-        <!-- <div id="img7">
-          <div class="static-img" id="static"></div>
-            <img src="images/vis7.png" />
-        </div> -->
+        <!-- Question Page --> 
+        <div class="home-root" id="question">
+            <h2 class="subtitle has-text-centered"><i>Given how important efficiency is, do first responders have the information to prioritize different 
+              calls?</i></h2>
+          </div> <!-- end question -->
+
+        <div id="info">
+        <h3>Prioritizing the Calls</h3>
+        <p>&emsp;The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
+            dispatch can make accurate calls. 
+          </p>
+        </div>
 
         <!-- The Severity bar charts -->
-        <h5>Given how important efficiency is, do first responders have the information to prioritize different calls?</h5>
         <div id="img5-6">
             <div class="static-img" id="static"></div>
               <img src="images/vis5.png" />
@@ -166,46 +176,53 @@
         <div id="img5-6">
           <div class="static-img" id="static"></div> 
             <img src="images/vis6.png" />
-        </div>  
+        </div><!-- end of severity bar charts --> 
 
-        <p>The first responders have accurate information about the severity of the incident. Given the initial severity level and the final severity level,
-          dispatch can make accurate calls. 
-        </p>
+        <!-- The formatting above is wrong and needs to be fixed -->
+        
+        <!-- Question Page --> 
+        <div class="home-root" id="question">
+            <h2 class="subtitle has-text-centered"><i>Given that the initial severity is accurate, what kind of call tyes make up the most frequent 
+              incidents?</i></h2>
+        </div> <!-- end question -->
 
-        <!-- Top Final Cally Types bar chart -->
-        <p>Given that the initial severity is accurate, what kind of call tyes make up the most frequent incidents?</p>
+        <!-- Top Final Call Types bar chart -->
         <div id="img9">
           <div class="static-img" id="static"></div> 
             <img src="images/vis9.png" />
         </div>
-        <br>
+        <h3>The Frequency</h3>
         <p>Because we can see the the call types that occur the most, we can see the ratio of the call types to the response time per day.</p>
+      
       </div><!-- end of section 3-->
 
-      <div class="section" id="section5">
-          <div id="brushZoom">
-            <h3>Scatter Plot</h3>
-            <div id="scatter"></div>
-          </div>
+      <!-- Section 4 -->
+      <div class="section" id="section4">
+        <div id="brushZoom">
+          <h3>Scatter Plot</h3>
+          <div id="scatter"></div>
   
           <div class="w-50" id="scatterNarative">
             <h5>Narrative Title</h5>
               <p>&emsp;Here we can see the ratio between the top call types to how much time to respond each day in the selected time range. </p>
-          </div>
-          
-          <br>
+            </div>
+        </div>
+      </div><!-- end section 4 -->
 
-      <div class="section" id="section4">
-        <div id="info">
-          <h3>Narrative</h3>
-            <p>&emsp;For the different dispatch codes, what is the phases of the reponse time? Here is the breakdown of what is taking the most time for 
-              each dispatch code.</p>
-        </div> <!-- end narrative -->
+        <!-- something is going on at the end of section 4 -->
 
+        <!-- Question Page --> 
+        <div class="home-root" id="question">
+            <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the reponse time?</i></h2>
+        </div> <!-- end question -->
+
+        <!-- Section 5 -->
+        <div class="section" id="section5">
         <div id="codes">
           <h3>Dispatch Codes</h3>
           <div class="row" id="piebar"></div>
-          <p>The incident disposition code reports what the outcome of the incident was.</p>
+          <p>&emsp;Here is the breakdown of what is taking the most time for 
+              each dispatch code. The incident disposition code reports what the outcome of the incident was.</p>
           <div class="table">
             <table>  
               <tr>
@@ -242,19 +259,19 @@
           </div>
         </div>
 
-         <!-- The last static vis --> 
+         <!-- The weird bubble static vis --> 
          <div id="img10">
-            <p>
-                We can see that there is a larger difference from dispatch time and the travel time. 
-              </p>
+            <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. </p>
             <div class="static-img" id="static"></div>
             <img src="images/vis10.png" />
           </div>
-      </div><!-- end section 4 -->
+
+        <div id="info">
+          <p>&emsp;Here is the breakdown of which borough has the best response time. </p>
+        </div>
 
          <!-- Dispatch Response by Borough the boxes one -->
          <div id="img4">
-           <p>Here is the breakdown of which borough has the best response time. </p>
             <div class="static-img" id="static"></div> 
               <img src="images/vis4.png" />
           </div>
