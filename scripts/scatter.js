@@ -1,4 +1,4 @@
-function plotScatter(data,precinct,maxCount,maxTime){
+function plotScatter(data,callType,maxCount,maxTime){
   //set dimensions and margins
   var margin = {top: 10, right: 30, bottom: 30, left: 60},
       width = 460 - margin.left - margin.right,
@@ -12,15 +12,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
-
-  /**
-   *  Sorting by precinct
-   *  Bronx         40-52
-   *  Brooklyn      60-94
-   *  Queens        100-115
-   *  Staten Island 120-123
-   */
-  
+            
    {
 
     // Add X axis
@@ -55,7 +47,7 @@ function plotScatter(data,precinct,maxCount,maxTime){
     // Color scale: give me a specie name, I return a color
     
     var color = d3.scaleOrdinal()
-      .domain(precinct)
+      .domain(callType)
       /*       purple,   dark blue,  dark teal,   red,       gold,      lime,    */
       .range(["#440154", "#3959b9", "#21908C", "#ed121c", "#f6d309", "#00ff27"])
 
@@ -128,9 +120,9 @@ tracked = "something";
   i = 0;
   maxCount = 0;
   maxTime = 0;
-  //var precinct = ["ARREST","INJURY","ABDPN","INJMAJ", "CARD", "UNC", "INBLED", "MVAINJ"];
-  var precinct = ["SICK", "INJURY", "DIFFBR", "EDP", "DRUG", "UNC"] 
-  precinct.forEach(district => {
+  //var callType = ["ARREST","INJURY","ABDPN","INJMAJ", "CARD", "UNC", "INBLED", "MVAINJ"];
+  var callType = ["SICK", "INJURY", "DIFFBR", "EDP", "DRUG", "UNC"] 
+  callType.forEach(district => {
     index = -1; // represents 1 day
     idk = []; //rename, keeps track of 4 different numeric values per day
     count = 0;
@@ -170,7 +162,7 @@ tracked = "something";
   names = [];
   {
     i = 0;
-    precinct.forEach(area =>{
+    callType.forEach(area =>{
       names[i++]=area[2];
     })
   }
