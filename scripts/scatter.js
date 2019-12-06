@@ -113,7 +113,6 @@ function plotScatter(data,precinct,maxCount,maxTime){
         .attr("cy", function (d) { return y(d.Petal_Length); } )
 
     } //update chart function
-
   };
 };
 tracked = null;
@@ -146,7 +145,7 @@ tracked = "something";
           idk[index][2] = 0;
           idk[index][3] = 0;
           idk[index][4] = 0;
-          idk[index][5] = district[2];
+          idk[index][5] = district;
         }
         if(report.initCallType == district){
             ++idk[index][1];
