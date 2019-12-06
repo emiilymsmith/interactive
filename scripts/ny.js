@@ -58,6 +58,8 @@ var nyMap = function(){
     totalResponseTime = [];
     countPerBorough = [];
     numSelections = 0;
+    maxTime = 0;
+    minTime = -1;
 
     selectedList.forEach(selected => {  
       totalResponseTime[numSelections] = 0;
@@ -69,13 +71,17 @@ var nyMap = function(){
             ++count;
             totalResponseTime[numSelections] += report.inciResp;
             ++countPerBorough[numSelections];
+            if(report.inciResp > maxTime)
+              maxTime = report.inciResp;
+            if(minTime == -1 ||report.inciResp < minTime)
+              minTime = report.inciResp;
           }
         })
       })
       ++numSelections;
     });
 
-    var statistics = { totalResponseTime:totalResponseTime, countPerBorough:countPerBorough, numSelections:numSelections, count:count };
+    var statistics = { totalResponseTime:totalResponseTime, countPerBorough:countPerBorough, numSelections:numSelections, count:count, maxTime:maxTime, minTime:minTime };
     return statistics;
   }
 
