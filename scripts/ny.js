@@ -75,8 +75,6 @@ var nyMap = function(){
               maxTime = report.inciResp;
             if(minTime == -1 ||report.inciResp < minTime)
               minTime = report.inciResp;
-            if(report.inciResp == -1)
-              console.log(report);
           }
         })
       })
