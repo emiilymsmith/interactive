@@ -148,6 +148,8 @@ function secToMin(sec){
     sec = '0' + sec;
   }
   if(hour > 0)
-    return hour + " hour " + min + " min " + sec + "secs";
-  return min + " min " + sec + " secs";
+    return hour + " hour " + min + " min " + sec + " secs";
+  if(min > 0)
+    return min + " min " + sec + " secs";
+  return sec + " secs";
 }
