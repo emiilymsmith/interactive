@@ -75,8 +75,6 @@ var nyMap = function(){
               maxTime = report.inciResp;
             if(minTime == -1 ||report.inciResp < minTime)
               minTime = report.inciResp;
-            if(report.inciResp == -1)
-              console.log(report);
           }
         })
       })
@@ -106,8 +104,8 @@ var nyMap = function(){
     } else {
       document.getElementById("count").innerText = statistics.count;
       document.getElementById("avgResponseT").innerText = secToMin((avg).toFixed(2));
-      document.getElementById("minTime").innerText = statistics.minTime;
-      document.getElementById("maxTime").innerText = statistics.maxTime;
+      document.getElementById("minTime").innerText = secToMin((statistics.minTime).toFixed(2));
+      document.getElementById("maxTime").innerText = secToMin((statistics.maxTime).toFixed(2));
 
     }
   }
