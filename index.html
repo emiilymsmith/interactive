@@ -100,7 +100,6 @@
           <h3>Dispatch Data</h3>
           <p>&emsp; The data is made up of incidents created in the EMS Computer Aided Dispatch System from 2013 to 2018. Changing the date in the 
             toolbar will adjust all of the dynamic visualizations.
-          </p>
           <p>&emsp; New York City is seperated into five divisions. They are: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</p>
         </div>
 
@@ -122,8 +121,9 @@
         <div id="info">
           <h3>Incidents and Response Time</h3>
           <p>&emsp;Within New York, the different boroughs have various numbers of incidents and levels of effeciency. Using the map, the boroughs can be 
-              selected to learn more about the different groupings within the selected dates. 
-            </p>
+              selected to learn more about the different groupings within the selected dates. </p>
+          <p>&emsp;Only the data with a valid dispatch response time and valid incident response time are included. Even with the checks, a vulnerablilty 
+            within the dataset concerning the times is highlighted. </p>
         </div>
         <div class="row">
           <!-- Select Panel / Left Column -->
@@ -148,9 +148,9 @@
               <span id="count"></span><br>
               <span><br>Average response time (min):</span>
               <span id="avgResponseT"></span><br>
-              <span><br>Min Time:</span>
+              <span><br>Min time:</span>
               <span id="minTime"></span><br>
-              <span><br>Max Time:</span>
+              <span><br>Max time:</span>
               <span id="maxTime"></span>
             </div>
             
@@ -158,7 +158,6 @@
         </div><!-- end row -->
 
         <div id="info">
-          <br>
           <h5>Response Time</h5> 
             <p>&emsp; The average response time is the time between when an incident was created in the dispatch system and when the first unit arrived on 
             location.  
@@ -204,9 +203,10 @@
         </div> <!-- end bar chart -->
 
         <h5>The Frequency</h5>
-        <p>Over the past several years, the most frequent call type was "Sick" followed by "Injury", "Dificult Breather", and "Psychiatric Patient".
-          Because we can see the call types that occur the most, we can see the ratio of the call types to the response time per day.  
-        </p>
+        <p>&emsp;Over the past several years, the most frequent call type was "Sick" followed by "Injury", "Dificult Breather", and 
+          "Psychiatric Patient".</p>
+        <p>&emsp;Because we can see the call types that occur the most, we can see the ratio of the call types to the response 
+          time per day.</p>
       
       </div><!-- end of section 3-->
 
@@ -265,7 +265,7 @@
 
       <!-- Question Page --> 
       <div class="home-root" id="question">
-          <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the reponse time?</i></h2>
+          <h2 class="subtitle has-text-centered"><i>For the different dispatch codes, what are the phases of the response time?</i></h2>
       </div> <!-- end question -->
 
       <!-- Section 5 -->
@@ -276,40 +276,47 @@
           the incident was created in the dispatch system and when a unit is assigned to that incident. The travel time is the time between when the 
           unit is assigned and when they arrive at the site of the incident. The moment when an incident is first created to when emergency services arrive
           is the incident response time. The incident disposition code reports what the outcome of the incident was.</p>
+        <p>&emsp;The histogram shows the dispatch code and the average response time in seconds for each code. The pie chart breaks 
+          down the dispatch response time and the travel time.</p>
         <div class="row" id="piebar"></div>
           <div class="table"><!-- Table -->
             <table> 
               <tr>
-                <td>82</td>
+                <td>82</td> 
                 <td>Transporting Patient</td>
                 <td>&emsp;</td>
-                <td>83</td>
-                <td>Patient Pronounced Dead</td>
+                <td>&emsp;</td>
+                <td>92</td> 
+                <td>Treated Not Transported</td>
               </tr>
               <tr>
-                <td>87</td>
+                <td>83</td> 
+                <td>Patient Pronounced Dead</td>
+                <td>&emsp;</td>
+                <td>&emsp;</td>
+                <td>93</td> 
+                <td>Refused Medical Aid</td>
+              </tr>
+              <tr>
+                <td>87</td> 
                 <td>Cancelled</td>
                 <td>&emsp;</td>
-                <td>90</td>
+                <td>&emsp;</td>
+                <td>94</td> 
+                <td>Treated and Transported</td>
+              </tr>
+              <tr>
+                <td>90</td> 
                 <td>Unfounded</td>
+                <td>&emsp;</td>
+                <td>&emsp;</td>
+                <td>95</td> 
+                <td>Triaged at Scene No Transport</td>
               </tr>
               <tr>
                 <td>91</td>
                 <td>Condition Corrected</td>
                 <td>&emsp;</td>
-                <td>92</td>
-                <td>Treated Not Transported</td>
-              </tr>
-              <tr>
-                <td>93</td>
-                <td>Refused Medical Aid</td>
-                <td>&emsp;</td>
-                <td>94</td>
-                <td>Treated and Transported</td>
-              </tr>
-              <tr>
-                <td>95</td>
-                <td>Triaged at Scene No Transport</td>
                 <td>&emsp;</td>
                 <td>96</td>
                 <td>Patient Gone on Arrival</td>
@@ -320,8 +327,9 @@
 
        <div class="info">
           <br><h5>Travel Time</h5>
-          <p>&emsp;We can see that there is a larger difference from dispatch time and the travel time. We can see that there is a larger difference from 
-          dispatch time and the travel time.
+          <p>&emsp;Considering the histogram and pie chart, we can see that there is a difference between how the response time
+            is broken down into dispatch time and the travel time. The travel time generally takes significantly longer than the 
+            time it takes dispatch to assign a unit. 
           </p>
         </div>
 
@@ -333,7 +341,8 @@
 
        <div id="info">
         <br><h5>Dispatch Time</h5>
-        <p>&emsp;Considering the average dispatch time in seconds for each Borough, Staten Island has the quickest dispatch time.
+        <p>&emsp;Observing the dispatch time directly, the differences within New York City can be analyzed. Considering the average 
+          dispatch time in seconds for each borough, Staten Island has the quickest dispatch time.
         </p>
        </div>
 
@@ -370,7 +379,7 @@
             Since the data file is large, we had to divide the csv into multiple files in order to access the data. Using the csv with our data was a 
             relatively new process for the group. It was a steep learning curve figuring out how the parts worked together to create a dynamic visualization.  
           </p>
-          <br><h6>Created by: Hannah Dolan, Nathan Raymond, Emily Smith</h6>
+          <br><h6>Created by: Stanton Carlisle, Hannah Dolan, Nathan Raymond, Emily Smith</h6>
         </div> <!-- Conclusion -->
       </div> <!-- end section 6 -->
 
