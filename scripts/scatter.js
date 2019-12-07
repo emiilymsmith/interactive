@@ -105,7 +105,6 @@ function plotScatter(data,callType,maxCount,maxTime){
 
     } //update chart function
   };
-  console.log('colors', color("SICK"), color("INJURY"), color("DIFFBR"), color("EDP"), color("DRUG"), color("UNC"));
 
 };
 tracked = null;

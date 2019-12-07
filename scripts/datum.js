@@ -97,7 +97,9 @@ var datum = [];
     function updateDatum(error,data){
         datum[curDatum] = data;
         ++curDatum;
-
+        for(i = 0;i<datum.length;++i){
+            datum[i] = datum[i].filter(function(report){return(report.validInciRT == "Y" && report.validDisp == "Y" && report.inciResp > 5)});
+        }
         if(curDatum == numDatum){
             document.getElementById("spin").style.visibility = 'hidden';
             firstVis();

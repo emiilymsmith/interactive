@@ -140,10 +140,16 @@ var nyMap = function(){
 };
 var firstVis = nyMap();
 function secToMin(sec){
-  min = Math.floor(sec/60);
+  hour = Math.floor(sec/60/60);
+  min = Math.floor(sec/60) % 60;
   sec = Math.floor(sec) % 60;
+  if(min < 10){
+    min = '0' + min;
+  }
   if(sec < 10){
     sec = '0' + sec;
   }
-  return min + " min " + sec + " secs"
+  if(hour > 0)
+    return hour + " hour " + min + " min " + sec + "secs";
+  return min + " min " + sec + " secs";
 }
